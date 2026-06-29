@@ -1,0 +1,74 @@
+/* ============================================================
+   WE ARE FIBER — Colour
+   "3 colori utilizzati in diverse opacità" — three Pantone-locked
+   brand colours, sampled from the official logo artwork, each
+   stepped 100 / 70 / 50 / 35 / 15 % over white. (Brand manual, p.14)
+   ============================================================ */
+:root {
+  /* ---- Brand base (sampled from official logo) ---- */
+  --fbr-teal:  #1ececa;   /* PANTONE 3252 C · rgb(30,206,202)  */
+  --fbr-pink:  #e54360;   /* PANTONE 198 C  · rgb(229,67,96)   */
+  --fbr-navy:  #002e5d;   /* PANTONE 648 C  · rgb(0,46,93)     */
+
+  /* Raw channel triplets (for rgba() composition) */
+  --fbr-teal-rgb: 30 206 202;   /* @kind color */
+  --fbr-pink-rgb: 229 67 96;    /* @kind color */
+  --fbr-navy-rgb: 0 46 93;      /* @kind color */
+
+  /* ---- Teal steps (over white) ---- */
+  --fbr-teal-100: #1ececa;
+  --fbr-teal-70:  #62ddd9;
+  --fbr-teal-50:  #8ee6e4;
+  --fbr-teal-35:  #b0edec;
+  --fbr-teal-15:  #ddf7f7;
+
+  /* ---- Pink steps (over white) ---- */
+  --fbr-pink-100: #e54360;
+  --fbr-pink-70:  #ed7b8f;
+  --fbr-pink-50:  #f2a1b0;
+  --fbr-pink-35:  #f5bdc7;
+  --fbr-pink-15:  #fbe3e7;
+
+  /* ---- Navy steps (over white) ---- */
+  --fbr-navy-100: #002e5d;
+  --fbr-navy-70:  #4d6c8d;
+  --fbr-navy-50:  #7f96ae;
+  --fbr-navy-35:  #a5b5c6;
+  --fbr-navy-15:  #d8dfe6;
+
+  /* ---- Neutrals ---- */
+  --fbr-white:  #ffffff;
+  --fbr-paper:  #f3f6f9;   /* faint navy-tinted off-white surface */
+  --fbr-line:   #d8dfe6;   /* = navy-15, hairline rules / borders */
+  --fbr-ink:    #002e5d;   /* navy doubles as the ink colour      */
+  --fbr-black:  #001626;   /* deepened navy for max contrast text */
+
+  /* ============================================================
+     Semantic aliases — reference these in product UI
+     ============================================================ */
+  --color-bg:            var(--fbr-white);
+  --color-bg-alt:        var(--fbr-paper);
+  --color-bg-invert:     var(--fbr-navy);   /* dark "colored ground" sections */
+  --surface-card:        var(--fbr-white);
+  --surface-sunken:      var(--fbr-paper);
+
+  --text-strong:         var(--fbr-navy);
+  --text-body:           #1c4060;           /* navy softened for long copy */
+  --text-muted:          var(--fbr-navy-50);
+  --text-on-invert:      var(--fbr-white);
+  --text-on-accent:      var(--fbr-navy);   /* navy reads best on teal */
+
+  --color-primary:       var(--fbr-teal);   /* signature interactive accent */
+  --color-primary-ink:   var(--fbr-navy);
+  --color-accent:        var(--fbr-pink);   /* energetic highlight / CTA      */
+  --color-accent-ink:    var(--fbr-white);
+
+  --border-default:      var(--fbr-line);
+  --border-strong:       var(--fbr-navy);
+  --focus-ring:          var(--fbr-teal);
+
+  /* States */
+  --state-success:       var(--fbr-teal);
+  --state-danger:        var(--fbr-pink);
+  --state-info:          var(--fbr-navy);
+}

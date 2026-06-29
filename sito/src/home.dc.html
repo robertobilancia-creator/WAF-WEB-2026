@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/we-are-fiber-design-system-3a2efe15-3733-4021-ad34-dd44ab3d81b6/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/we-are-fiber-design-system-3a2efe15-3733-4021-ad34-dd44ab3d81b6/tokens/colors.css">
+<link rel="stylesheet" href="_ds/we-are-fiber-design-system-3a2efe15-3733-4021-ad34-dd44ab3d81b6/tokens/typography.css">
+<link rel="stylesheet" href="_ds/we-are-fiber-design-system-3a2efe15-3733-4021-ad34-dd44ab3d81b6/tokens/spacing.css">
+<link rel="stylesheet" href="_ds/we-are-fiber-design-system-3a2efe15-3733-4021-ad34-dd44ab3d81b6/styles.css">
+<script src="_ds/we-are-fiber-design-system-3a2efe15-3733-4021-ad34-dd44ab3d81b6/_ds_bundle.js"></script>
+<style>
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; padding:0; background:#fff; }
+  ::selection{ background:var(--fbr-teal); color:var(--fbr-navy); }
+  @keyframes waf-marquee{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
+  .waf-link:hover{ color:var(--fbr-pink) !important; }
+</style>
+</helmet>
+
+<div style="background:#fff; font-family:var(--font-text); color:var(--fbr-navy);">
+
+  <!-- ============ HEADER ============ -->
+  <div style="position:sticky; top:16px; z-index:100; padding:0 24px;">
+    <header style="max-width:1240px; margin:16px auto 0; display:flex; align-items:center; justify-content:space-between; height:86px; padding:0 16px 0 26px; background:rgba(255,255,255,0.82); backdrop-filter:blur(14px); border:1px solid var(--fbr-line); border-radius:18px; box-shadow:0 10px 34px rgba(0,46,93,0.08);">
+      <img src="assets/logos/WAF_orizz_color.png" alt="We Are Fiber" style="height:45px; width:auto; display:block;">
+      <nav style="display:flex; align-items:center; gap:26px;">
+        <div onMouseEnter="{{ openServ }}" onMouseLeave="{{ closeServ }}" style="position:relative; height:86px; display:flex; align-items:center;">
+          <span style="display:inline-flex; align-items:center; gap:6px; font-family:var(--font-text); font-weight:600; font-size:14.5px; color:var(--fbr-navy); cursor:pointer;">Servizi <span style="font-size:9px; color:var(--fbr-teal); transition:transform .2s; transform:{{ servCaret }};">▾</span></span>
+          <sc-if value="{{ menuServ }}" hint-placeholder-val="{{ false }}">
+            <div style="position:absolute; top:80px; left:0; width:940px; background:#fff; border:1px solid var(--fbr-line); border-radius:20px; box-shadow:0 28px 70px rgba(0,46,93,0.18); padding:34px 38px; display:grid; grid-template-columns:repeat(4,1fr); gap:30px;">
+              <sc-for list="{{ navServices }}" as="col" hint-placeholder-count="4">
+                <div>
+                  <div style="font-family:var(--font-title); font-weight:700; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--fbr-teal); padding-bottom:12px; margin-bottom:14px; border-bottom:1px solid var(--fbr-line);">{{ col.title }}</div>
+                  <div style="display:flex; flex-direction:column; gap:12px;">
+                    <sc-for list="{{ col.items }}" as="it" hint-placeholder-count="4">
+                      <a href="#" class="waf-link" style="font-family:var(--font-text); font-size:14px; color:var(--text-body); text-decoration:none; line-height:1.25; transition:color .15s;">{{ it }}</a>
+                    </sc-for>
+                  </div>
+                </div>
+              </sc-for>
+            </div>
+          </sc-if>
+        </div>
+        <a href="#" class="waf-link" style="display:inline-flex; align-items:center; gap:6px; font-family:var(--font-text); font-weight:600; font-size:14.5px; color:var(--fbr-navy); text-decoration:none; transition:color .15s;">Settori <span style="font-size:9px; color:var(--fbr-teal);">▾</span></a>
+        <a href="#" class="waf-link" style="font-family:var(--font-text); font-weight:600; font-size:14.5px; color:var(--fbr-navy); text-decoration:none; transition:color .15s;">Metodo</a>
+        <div onMouseEnter="{{ openAz }}" onMouseLeave="{{ closeAz }}" style="position:relative; height:86px; display:flex; align-items:center;">
+          <span style="display:inline-flex; align-items:center; gap:6px; font-family:var(--font-text); font-weight:600; font-size:14.5px; color:var(--fbr-navy); cursor:pointer;">Azienda <span style="font-size:9px; color:var(--fbr-teal); transition:transform .2s; transform:{{ azCaret }};">▾</span></span>
+          <sc-if value="{{ menuAz }}" hint-placeholder-val="{{ false }}">
+            <div style="position:absolute; top:80px; left:50%; transform:translateX(-50%); width:230px; background:#fff; border:1px solid var(--fbr-line); border-radius:18px; box-shadow:0 28px 70px rgba(0,46,93,0.18); padding:18px;">
+              <div style="display:flex; flex-direction:column; gap:4px;">
+                <sc-for list="{{ navAzienda }}" as="it" hint-placeholder-count="4">
+                  <a href="#" class="waf-link" style="font-family:var(--font-text); font-size:14.5px; color:var(--text-body); text-decoration:none; padding:9px 12px; border-radius:10px; transition:color .15s;">{{ it }}</a>
+                </sc-for>
+              </div>
+            </div>
+          </sc-if>
+        </div>
+        <a href="#" class="waf-link" style="display:inline-flex; align-items:center; gap:6px; font-family:var(--font-text); font-weight:600; font-size:14.5px; color:var(--fbr-navy); text-decoration:none; transition:color .15s;">Blog <span style="font-size:9px; color:var(--fbr-teal);">▾</span></a>
+        <a href="#" class="waf-link" style="font-family:var(--font-text); font-weight:600; font-size:14.5px; color:var(--fbr-navy); text-decoration:none; transition:color .15s;">Careers</a>
+      </nav>
+      <div style="display:flex; align-items:center; gap:18px;">
+        <div style="font-family:var(--font-title); font-weight:500; font-size:12.5px; letter-spacing:0.04em;"><span style="color:var(--fbr-navy);">IT</span> <span style="color:var(--fbr-navy-35);">/</span> <span style="color:var(--fbr-navy-50);">EN</span></div>
+        <a href="#" style="display:inline-flex; align-items:center; gap:8px; font-family:var(--font-text); font-weight:700; font-size:13.5px; color:#fff; background:var(--fbr-navy); padding:12px 20px; border-radius:12px; text-decoration:none; transition:all .2s; box-shadow:0 6px 18px rgba(0,46,93,0.18);" style-hover="background:var(--fbr-black); transform:translateY(-1px);">Prenota una call</a>
+      </div>
+    </header>
+  </div>
+
+  <!-- ============ HERO (white band) ============ -->
+  <section style="padding:80px 24px 96px;">
+    <div style="max-width:1180px; margin:0 auto; display:grid; grid-template-columns:1.05fr 0.95fr; gap:56px; align-items:center;">
+      <div>
+        <div style="display:inline-flex; align-items:center; gap:9px; font-family:var(--font-title); font-weight:700; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:var(--fbr-teal); margin-bottom:26px;"><span style="width:7px; height:7px; border-radius:50%; background:var(--fbr-pink);"></span>Outsource. Human force.</div>
+        <h1 style="font-family:var(--font-display); font-weight:700; font-size:60px; line-height:1.04; letter-spacing:-0.025em; color:var(--fbr-navy); margin:0 0 26px;">Il partner operativo dietro la tua <span style="color:var(--fbr-teal);">crescita</span>.</h1>
+        <p style="font-family:var(--font-text); font-weight:400; font-size:18px; line-height:1.65; color:var(--text-body); margin:0 0 36px; max-width:520px;">Da oltre 15 anni progettiamo modelli operativi BPO scalabili a livello internazionale: customer service, back office e automation. Persone, processi e tecnologia al servizio delle tue performance.</p>
+        <div style="display:flex; align-items:center; gap:14px; flex-wrap:wrap;">
+          <a href="#" style="display:inline-flex; align-items:center; gap:9px; font-family:var(--font-text); font-weight:700; font-size:15px; color:#fff; background:var(--fbr-navy); padding:15px 26px; border-radius:14px; text-decoration:none; transition:all .2s; box-shadow:0 10px 26px rgba(0,46,93,0.2);" style-hover="background:var(--fbr-black); transform:translateY(-2px);">Parliamo del tuo progetto <span style="font-size:16px;">→</span></a>
+          <a href="#" style="display:inline-flex; align-items:center; gap:9px; font-family:var(--font-text); font-weight:700; font-size:15px; color:var(--fbr-navy); background:#fff; padding:15px 26px; border:1px solid var(--fbr-navy-35); border-radius:14px; text-decoration:none; transition:all .2s;" style-hover="border-color:var(--fbr-navy); background:var(--fbr-paper);">Esplora i servizi</a>
+        </div>
+      </div>
+      <div style="position:relative;">
+        <div style="position:relative; border-radius:24px; overflow:hidden; box-shadow:0 22px 60px rgba(0,46,93,0.18);">
+          <img src="assets/imagery/hero-home.jpg" alt="Team We Are Fiber" style="width:100%; height:470px; object-fit:cover; object-position:center center; display:block;">
+          <div style="position:absolute; inset:0; background:linear-gradient(150deg, rgba(30,206,202,0.05), rgba(0,46,93,0.14));"></div>
+        </div>
+        <div style="position:absolute; top:28px; right:-22px; display:flex; align-items:center; gap:14px; background:#fff; border:1px solid var(--fbr-line); border-radius:16px; padding:15px 20px; box-shadow:0 16px 38px rgba(0,46,93,0.14);">
+          <div style="width:42px; height:42px; border-radius:11px; background:var(--fbr-teal-15); display:flex; align-items:center; justify-content:center; color:var(--fbr-navy); flex:none;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 2.6 5.3 5.8.8-4.2 4.1 1 5.8L12 16.3 6.8 19l1-5.8L3.6 9.1l5.8-.8z"></path></svg>
+          </div>
+          <div><div style="font-family:var(--font-title); font-weight:300; font-size:26px; line-height:1; color:var(--fbr-navy);">94<span style="color:var(--fbr-teal); font-size:18px;">%</span></div><div style="font-family:var(--font-text); font-size:12.5px; color:var(--text-muted); margin-top:3px;">Customer Satisfaction</div></div>
+        </div>
+        <div style="position:absolute; bottom:26px; left:-24px; display:flex; align-items:center; gap:14px; background:#fff; border:1px solid var(--fbr-line); border-radius:16px; padding:15px 20px; box-shadow:0 16px 38px rgba(0,46,93,0.14);">
+          <div style="width:42px; height:42px; border-radius:11px; background:var(--fbr-teal-15); display:flex; align-items:center; justify-content:center; color:var(--fbr-navy); flex:none;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"></rect><path d="M8 21h8m-4-4v4"></path></svg>
+          </div>
+          <div><div style="font-family:var(--font-title); font-weight:300; font-size:26px; line-height:1; color:var(--fbr-navy);">+1.000</div><div style="font-family:var(--font-text); font-size:12.5px; color:var(--text-muted); margin-top:3px;">workstation operative 24/7</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CLIENTS (gray band) ============ -->
+  <section style="background:var(--fbr-paper); padding:44px 0; overflow:hidden;">
+    <div style="text-align:center; font-family:var(--font-title); font-weight:700; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--fbr-navy-50); margin-bottom:26px;">Le aziende che ci hanno scelto</div>
+    <div style="position:relative; overflow:hidden; -webkit-mask-image:linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image:linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);">
+      <div style="display:flex; width:max-content; align-items:center; gap:80px; animation:waf-marquee 26s linear infinite;">
+        <sc-for list="{{ clientsLoop }}" as="c" hint-placeholder-count="10">
+          <span style="font-family:var(--font-text); font-weight:800; font-size:26px; letter-spacing:0.01em; color:var(--fbr-navy-50); white-space:nowrap;">{{ c }}</span>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ NUMBERS (white band, no cards) ============ -->
+  <section style="padding:116px 24px;">
+    <div style="max-width:1180px; margin:0 auto;">
+      <div style="text-align:center; max-width:600px; margin:0 auto 64px;">
+        <div style="display:inline-flex; align-items:center; gap:9px; font-family:var(--font-title); font-weight:700; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:var(--fbr-teal); margin-bottom:18px;"><span style="width:7px; height:7px; border-radius:50%; background:var(--fbr-pink);"></span>We Are Fiber in numeri</div>
+        <h2 style="font-family:var(--font-display); font-weight:700; font-size:38px; line-height:1.1; letter-spacing:-0.02em; color:var(--fbr-navy); margin:0 0 14px;">Risultati che parlano <span style="color:var(--fbr-teal);">da soli</span></h2>
+        <p style="font-family:var(--font-text); font-size:16px; line-height:1.6; color:var(--text-body); margin:0;">Una struttura solida, multilingua e con capacità di attivazione rapida su progetti complessi.</p>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:0;">
+        <sc-for list="{{ numbers }}" as="n" hint-placeholder-count="4">
+          <div style="text-align:center; padding:6px 24px; border-left:1px solid var(--fbr-line);">
+            <div style="font-family:var(--font-title); font-weight:300; font-size:58px; line-height:1; color:var(--fbr-navy); margin-bottom:14px;">{{ n.v }}</div>
+            <div style="font-family:var(--font-text); font-size:14px; line-height:1.45; color:var(--text-body);">{{ n.label }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SERVICES (gray band) ============ -->
+  <section style="background:var(--fbr-paper); padding:116px 24px;">
+    <div style="max-width:1180px; margin:0 auto;">
+      <div style="max-width:620px; margin-bottom:48px;">
+        <div style="display:inline-flex; align-items:center; gap:9px; font-family:var(--font-title); font-weight:700; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:var(--fbr-teal); margin-bottom:18px;"><span style="width:7px; height:7px; border-radius:50%; background:var(--fbr-pink);"></span>I nostri servizi</div>
+        <h2 style="font-family:var(--font-display); font-weight:700; font-size:40px; line-height:1.08; letter-spacing:-0.02em; color:var(--fbr-navy); margin:0 0 14px;">Quattro aree, <span style="color:var(--fbr-teal);">un unico partner</span></h2>
+        <p style="font-family:var(--font-text); font-size:16px; line-height:1.6; color:var(--text-body); margin:0;">Gestiamo l'intero ciclo di relazione con i tuoi clienti e ottimizziamo i processi di business.</p>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:18px; grid-auto-rows:1fr;">
+
+        <!-- CS -->
+        <a href="#" style="display:flex; flex-direction:column; background:#fff; border:1px solid var(--fbr-line); border-radius:18px; padding:32px; text-decoration:none; transition:background .22s, border-color .22s, box-shadow .22s, transform .22s;" style-hover="background:var(--fbr-teal-15); border-color:var(--fbr-teal); box-shadow:0 16px 40px rgba(30,206,202,0.13); transform:translateY(-3px);">
+          <div style="display:flex; align-items:center; gap:15px; margin-bottom:16px;">
+            <div style="width:46px; height:46px; border-radius:13px; background:var(--fbr-teal-15); display:flex; align-items:center; justify-content:center; color:var(--fbr-navy); flex:none; transition:background .22s;" style-hover="background:var(--fbr-teal);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 14v-3a9 9 0 0 1 18 0v3"></path><path d="M21 16a2 2 0 0 1-2 2h-2v-6h2a2 2 0 0 1 2 2z"></path><path d="M3 16a2 2 0 0 0 2 2h2v-6H5a2 2 0 0 0-2 2z"></path><path d="M18 18.5a4 4 0 0 1-4 3.5h-2"></path></svg></div>
+            <div>
+              <div style="font-family:var(--font-title); font-weight:700; font-size:10.5px; letter-spacing:0.1em; text-transform:uppercase; color:var(--fbr-teal); margin-bottom:3px;">01 — Relazione</div>
+              <h3 style="font-family:var(--font-title); font-weight:700; font-size:20px; color:var(--fbr-navy); margin:0;">Customer Service</h3>
+            </div>
+          </div>
+          <p style="font-family:var(--font-text); font-size:15px; line-height:1.6; color:var(--text-body); margin:0 0 18px; flex:1;">La relazione con i tuoi clienti, curata su ogni canale e in ogni lingua, 24/7.</p>
+          <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:22px;"><sc-for list="{{ tagsCS }}" as="t" hint-placeholder-count="5"><span style="font-family:var(--font-text); font-weight:500; font-size:12.5px; color:var(--text-body); background:var(--fbr-paper); border:1px solid var(--fbr-line); border-radius:40px; padding:6px 13px;">{{ t }}</span></sc-for></div>
+          <div style="display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-text); font-weight: 700; font-size: 13.5px; color: var(--fbr-navy); border-radius: 10px; padding: 10px 18px; align-self: flex-start; background-color: var(--fbr-teal-15)">Scopri di più <span style="font-size:15px;">→</span></div>
+        </a>
+
+        <!-- BO -->
+        <a href="#" style="display:flex; flex-direction:column; background:#fff; border:1px solid var(--fbr-line); border-radius:18px; padding:32px; text-decoration:none; transition:background .22s, border-color .22s, box-shadow .22s, transform .22s;" style-hover="background:var(--fbr-teal-15); border-color:var(--fbr-teal); box-shadow:0 16px 40px rgba(30,206,202,0.13); transform:translateY(-3px);">
+          <div style="display:flex; align-items:center; gap:15px; margin-bottom:16px;">
+            <div style="width:46px; height:46px; border-radius:13px; background:var(--fbr-teal-15); display:flex; align-items:center; justify-content:center; color:var(--fbr-navy); flex:none;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 3 8l9 5 9-5-9-5z"></path><path d="m3 13 9 5 9-5"></path><path d="m3 18 9 5 9-5"></path></svg></div>
+            <div>
+              <div style="font-family:var(--font-title); font-weight:700; font-size:10.5px; letter-spacing:0.1em; text-transform:uppercase; color:var(--fbr-teal); margin-bottom:3px;">02 — Operations</div>
+              <h3 style="font-family:var(--font-title); font-weight:700; font-size:20px; color:var(--fbr-navy); margin:0;">Back Office</h3>
+            </div>
+          </div>
+          <p style="font-family:var(--font-text); font-size:15px; line-height:1.6; color:var(--text-body); margin:0 0 18px; flex:1;">Dati, documenti e ordini gestiti con precisione oltre il 99%, mentre tu resti sul core business.</p>
+          <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:22px;"><sc-for list="{{ tagsBO }}" as="t" hint-placeholder-count="5"><span style="font-family:var(--font-text); font-weight:500; font-size:12.5px; color:var(--text-body); background:var(--fbr-paper); border:1px solid var(--fbr-line); border-radius:40px; padding:6px 13px;">{{ t }}</span></sc-for></div>
+          <div style="display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-text); font-weight: 700; font-size: 13.5px; color: var(--fbr-navy); border-radius: 10px; padding: 10px 18px; align-self: flex-start; background-color: var(--fbr-teal-15)">Scopri di più <span style="font-size:15px;">→</span></div>
+        </a>
+
+        <!-- PM -->
+        <a href="#" style="display:flex; flex-direction:column; background:#fff; border:1px solid var(--fbr-line); border-radius:18px; padding:32px; text-decoration:none; transition:background .22s, border-color .22s, box-shadow .22s, transform .22s;" style-hover="background:var(--fbr-teal-15); border-color:var(--fbr-teal); box-shadow:0 16px 40px rgba(30,206,202,0.13); transform:translateY(-3px);">
+          <div style="display:flex; align-items:center; gap:15px; margin-bottom:16px;">
+            <div style="width:46px; height:46px; border-radius:13px; background:var(--fbr-teal-15); display:flex; align-items:center; justify-content:center; color:var(--fbr-navy); flex:none;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg></div>
+            <div>
+              <div style="font-family:var(--font-title); font-weight:700; font-size:10.5px; letter-spacing:0.1em; text-transform:uppercase; color:var(--fbr-teal); margin-bottom:3px;">03 — Efficienza</div>
+              <h3 style="font-family:var(--font-title); font-weight:700; font-size:20px; color:var(--fbr-navy); margin:0;">Process Management</h3>
+            </div>
+          </div>
+          <p style="font-family:var(--font-text); font-size:15px; line-height:1.6; color:var(--text-body); margin:0 0 18px; flex:1;">Control Room, Quality Audit e RPA: processi più veloci, errori vicini allo zero.</p>
+          <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:22px;"><sc-for list="{{ tagsPM }}" as="t" hint-placeholder-count="3"><span style="font-family:var(--font-text); font-weight:500; font-size:12.5px; color:var(--text-body); background:var(--fbr-paper); border:1px solid var(--fbr-line); border-radius:40px; padding:6px 13px;">{{ t }}</span></sc-for></div>
+          <div style="display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-text); font-weight: 700; font-size: 13.5px; color: var(--fbr-navy); border-radius: 10px; padding: 10px 18px; align-self: flex-start; background-color: var(--fbr-teal-15)">Scopri di più <span style="font-size:15px;">→</span></div>
+        </a>
+
+        <!-- OM -->
+        <a href="#" style="display:flex; flex-direction:column; background:#fff; border:1px solid var(--fbr-line); border-radius:18px; padding:32px; text-decoration:none; transition:background .22s, border-color .22s, box-shadow .22s, transform .22s;" style-hover="background:var(--fbr-teal-15); border-color:var(--fbr-teal); box-shadow:0 16px 40px rgba(30,206,202,0.13); transform:translateY(-3px);">
+          <div style="display:flex; align-items:center; gap:15px; margin-bottom:16px;">
+            <div style="width:46px; height:46px; border-radius:13px; background:var(--fbr-teal-15); display:flex; align-items:center; justify-content:center; color:var(--fbr-navy); flex:none;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 18-5v12L3 14v-3z"></path><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"></path></svg></div>
+            <div>
+              <div style="font-family:var(--font-title); font-weight:700; font-size:10.5px; letter-spacing:0.1em; text-transform:uppercase; color:var(--fbr-teal); margin-bottom:3px;">04 — Crescita</div>
+              <h3 style="font-family:var(--font-title); font-weight:700; font-size:20px; color:var(--fbr-navy); margin:0;">Outbound Marketing</h3>
+            </div>
+          </div>
+          <p style="font-family:var(--font-text); font-size:15px; line-height:1.6; color:var(--text-body); margin:0 0 18px; flex:1;">Survey, indagini di mercato e campagne loyalty che trasformano i contatti in opportunità.</p>
+          <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:22px;"><sc-for list="{{ tagsOM }}" as="t" hint-placeholder-count="3"><span style="font-family:var(--font-text); font-weight:500; font-size:12.5px; color:var(--text-body); background:var(--fbr-paper); border:1px solid var(--fbr-line); border-radius:40px; padding:6px 13px;">{{ t }}</span></sc-for></div>
+          <div style="display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-text); font-weight: 700; font-size: 13.5px; color: var(--fbr-navy); border-radius: 10px; padding: 10px 18px; align-self: flex-start; background-color: var(--fbr-teal-15)">Scopri di più <span style="font-size:15px;">→</span></div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TEAM (white band) ============ -->
+  <section style="padding:116px 24px;">
+    <div style="max-width:1180px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center;">
+      <div>
+        <div style="display:inline-flex; align-items:center; gap:9px; font-family:var(--font-title); font-weight:700; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:var(--fbr-teal); margin-bottom:20px;"><span style="width:7px; height:7px; border-radius:50%; background:var(--fbr-pink);"></span>Persone &amp; cultura</div>
+        <h2 style="font-family:var(--font-display); font-weight:700; font-size:38px; line-height:1.08; letter-spacing:-0.02em; color:var(--fbr-navy); margin:0 0 18px;">Team dedicati, <span style="color:var(--fbr-teal);">multilingua per natura</span></h2>
+        <p style="font-family:var(--font-text); font-size:17px; line-height:1.65; color:var(--text-body); margin:0 0 16px;">Operatori bilingua e multilingua selezionati in base al progetto e al mercato di riferimento, per una customer experience coerente a livello internazionale.</p>
+        <p style="font-family:var(--font-text); font-size:15px; line-height:1.65; color:var(--text-muted); margin:0;">Il tuo team dedicato diventa, di fatto, un'estensione della tua azienda — con formazione linguistica interna e training continuo.</p>
+      </div>
+      <div style="background:#fff; border:1px solid var(--fbr-line); border-radius:20px; padding:40px; box-shadow:0 2px 10px rgba(0,46,93,0.04); display:flex; flex-direction:column; gap:0;">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:0;">
+          <div style="padding:0 32px 0 0; border-right:1px solid var(--fbr-line);">
+            <div style="font-family:var(--font-title); font-weight:300; font-size:56px; line-height:1; color:var(--fbr-teal); margin-bottom:12px;">~83<span style="font-size:36px;">%</span></div>
+            <div style="font-family:var(--font-title); font-weight:700; font-size:14px; color:var(--fbr-navy); margin-bottom:6px;">Operatori con laurea</div>
+            <div style="font-family:var(--font-text); font-size:13.5px; line-height:1.5; color:var(--text-muted);">Formazione universitaria e training linguistico interno continuativo.</div>
+          </div>
+          <div style="padding:0 0 0 32px;">
+            <div style="font-family:var(--font-title); font-weight:300; font-size:56px; line-height:1; color:var(--fbr-navy); margin-bottom:12px;">+6</div>
+            <div style="font-family:var(--font-title); font-weight:700; font-size:14px; color:var(--fbr-navy); margin-bottom:6px;">Lingue gestite, certificate CEFR</div>
+            <div style="font-family:var(--font-text); font-size:13.5px; line-height:1.5; color:var(--text-muted);">Inglese, italiano, francese, tedesco, spagnolo, greco.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTPRINT / SEDI (gray band) ============ -->
+  <section style="background:var(--fbr-paper); padding:116px 24px;">
+    <div style="max-width:1180px; margin:0 auto;">
+      <div style="text-align:center; max-width:620px; margin:0 auto 52px;">
+        <div style="display:inline-flex; align-items:center; gap:9px; font-family:var(--font-title); font-weight:700; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:var(--fbr-teal); margin-bottom:18px;"><span style="width:7px; height:7px; border-radius:50%; background:var(--fbr-pink);"></span>La nostra presenza</div>
+        <h2 style="font-family:var(--font-display); font-weight:700; font-size:38px; line-height:1.1; letter-spacing:-0.02em; color:var(--fbr-navy); margin:0 0 14px;">Un modello a <span style="color:var(--fbr-teal);">governance europea</span></h2>
+        <p style="font-family:var(--font-text); font-size:16px; line-height:1.6; color:var(--text-body); margin:0;">Struttura operativa multilingua e una capacità che opera ogni giorno, con il rigore e la conformità di una governance europea.</p>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:18px;">
+
+        <div style="background:#fff; border:1px solid var(--fbr-line); border-radius:18px; padding:32px;">
+          <div style="display:flex; align-items:center; gap:13px; margin-bottom:18px;">
+            <div style="font-family:var(--font-title); font-weight:700; font-size:13px; letter-spacing:0.04em; color:var(--fbr-navy); background:var(--fbr-teal-15); border-radius:9px; padding:8px 12px;">AL</div>
+            <div style="font-family:var(--font-title); font-weight:700; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--fbr-navy-50);">Headquarters</div>
+          </div>
+          <h3 style="font-family:var(--font-title); font-weight:700; font-size:22px; color:var(--fbr-navy); margin:0 0 4px;">Albania</h3>
+          <div style="font-family: var(--font-text); font-size: 13px; font-weight: 600; color: var(--color-primary); margin-bottom: 10px">5 sedi operative</div>
+          <p style="font-family:var(--font-text); font-size:14.5px; line-height:1.6; color:var(--text-body); margin:0;">Cuore operativo del gruppo: workforce multilingua, formazione interna e capacità H24.</p>
+        </div>
+
+        <div style="background:#fff; border:1px solid var(--fbr-line); border-radius:18px; padding:32px;">
+          <div style="display:flex; align-items:center; gap:13px; margin-bottom:18px;">
+            <div style="font-family:var(--font-title); font-weight:700; font-size:13px; letter-spacing:0.04em; color:var(--fbr-navy); background:var(--fbr-teal-15); border-radius:9px; padding:8px 12px;">XK</div>
+            <div style="font-family:var(--font-title); font-weight:700; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--fbr-navy-50);">New site · DACH</div>
+          </div>
+          <h3 style="font-family:var(--font-title); font-weight:700; font-size:22px; color:var(--fbr-navy); margin:0 0 4px;">Kosovo</h3>
+          <div style="font-family: var(--font-text); font-size: 13px; font-weight: 600; color: var(--fbr-teal); margin-bottom: 10px">New delivery site · Pristina</div>
+          <p style="font-family:var(--font-text); font-size:14.5px; line-height:1.6; color:var(--text-body); margin:0;">Talent pool dedicato ai programmi DACH.</p>
+        </div>
+
+        <div style="background:#fff; border:1px solid var(--fbr-line); border-radius:18px; padding:32px;">
+          <div style="display:flex; align-items:center; gap:13px; margin-bottom:18px;">
+            <div style="font-family:var(--font-title); font-weight:700; font-size:13px; letter-spacing:0.04em; color:var(--fbr-navy); background:var(--fbr-teal-15); border-radius:9px; padding:8px 12px;">IT</div>
+            <div style="font-family:var(--font-title); font-weight:700; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--fbr-navy-50);">Sede Italia</div>
+          </div>
+          <h3 style="font-family:var(--font-title); font-weight:700; font-size:22px; color:var(--fbr-navy); margin:0 0 10px;">Napoli</h3>
+          <p style="font-family:var(--font-text); font-size:14.5px; line-height:1.6; color:var(--text-body); margin:0;">Presidio commerciale e di coordinamento sul mercato italiano, vicino ai clienti.</p>
+        </div>
+
+        <div style="background:#fff; border:1px solid var(--fbr-line); border-radius:18px; padding:32px;">
+          <div style="display:flex; align-items:center; gap:13px; margin-bottom:18px;">
+            <div style="font-family:var(--font-title); font-weight:700; font-size:13px; letter-spacing:0.04em; color:var(--fbr-navy); background:var(--fbr-teal-15); border-radius:9px; padding:8px 12px;">UK</div>
+            <div style="font-family:var(--font-title); font-weight:700; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--fbr-navy-50);">BUSINESS DEVELOPMENT</div>
+          </div>
+          <h3 style="font-family:var(--font-title); font-weight:700; font-size:22px; color:var(--fbr-navy); margin:0 0 10px;">Londra</h3>
+          <p style="font-family:var(--font-text); font-size:14.5px; line-height:1.6; color:var(--text-body); margin:0;">Punto di riferimento per i mercati internazionali e i clienti di lingua inglese.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SECTORS (white band) ============ -->
+  <section style="padding:116px 24px;">
+    <div style="max-width:1180px; margin:0 auto;">
+      <div style="max-width:620px; margin-bottom:48px;">
+        <div style="display:inline-flex; align-items:center; gap:9px; font-family:var(--font-title); font-weight:700; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:var(--fbr-teal); margin-bottom:18px;"><span style="width:7px; height:7px; border-radius:50%; background:var(--fbr-pink);"></span>Settori</div>
+        <h2 style="font-family:var(--font-display); font-weight:700; font-size:40px; line-height:1.08; letter-spacing:-0.02em; color:var(--fbr-navy); margin:0 0 14px;">Esperienza in contesti <span style="color:var(--fbr-teal);">ad alta complessità</span></h2>
+        <p style="font-family:var(--font-text); font-size:16px; line-height:1.6; color:var(--text-body); margin:0;">Adattiamo rapidamente i modelli di gestione alle esigenze specifiche di ogni settore.</p>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:18px;">
+        <div style="position:relative; aspect-ratio:1/0.68; border-radius:18px; overflow:hidden; box-shadow:0 8px 24px rgba(0,46,93,0.08); transition:transform .22s;" style-hover="transform:translateY(-4px);"><img src="assets/imagery/sector-healthcare.jpg" alt="Healthcare" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;"><div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,46,93,0) 40%, rgba(0,46,93,0.84)); pointer-events:none;"></div><div style="position:absolute; left:18px; bottom:16px; pointer-events:none;"><div style="font-family:var(--font-title); font-weight:300; font-size:12px; color:var(--fbr-teal); margin-bottom:4px;">01</div><div style="font-family:var(--font-title); font-weight:700; font-size:16px; color:#fff;">Healthcare</div></div></div>
+        <div style="position:relative; aspect-ratio:1/0.68; border-radius:18px; overflow:hidden; box-shadow:0 8px 24px rgba(0,46,93,0.08); transition:transform .22s;" style-hover="transform:translateY(-4px);"><img src="assets/imagery/sector-fintech.jpg" alt="Finance &amp; Insurance" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;"><div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,46,93,0) 40%, rgba(0,46,93,0.84)); pointer-events:none;"></div><div style="position:absolute; left:18px; bottom:16px; pointer-events:none;"><div style="font-family:var(--font-title); font-weight:300; font-size:12px; color:var(--fbr-teal); margin-bottom:4px;">02</div><div style="font-family:var(--font-title); font-weight:700; font-size:16px; color:#fff;">Finance &amp; Insurance</div></div></div>
+        <div style="position:relative; aspect-ratio:1/0.68; border-radius:18px; overflow:hidden; box-shadow:0 8px 24px rgba(0,46,93,0.08); transition:transform .22s;" style-hover="transform:translateY(-4px);"><img src="assets/imagery/sector-ecommerce.jpg" alt="E-commerce" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;"><div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,46,93,0) 40%, rgba(0,46,93,0.84)); pointer-events:none;"></div><div style="position:absolute; left:18px; bottom:16px; pointer-events:none;"><div style="font-family:var(--font-title); font-weight:300; font-size:12px; color:var(--fbr-teal); margin-bottom:4px;">03</div><div style="font-family:var(--font-title); font-weight:700; font-size:16px; color:#fff;">E-commerce</div></div></div>
+        <div style="position:relative; aspect-ratio:1/0.68; border-radius:18px; overflow:hidden; box-shadow:0 8px 24px rgba(0,46,93,0.08); transition:transform .22s;" style-hover="transform:translateY(-4px);"><img src="assets/imagery/sector-delivery.jpg" alt="Food Delivery" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;"><div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,46,93,0) 40%, rgba(0,46,93,0.84)); pointer-events:none;"></div><div style="position:absolute; left:18px; bottom:16px; pointer-events:none;"><div style="font-family:var(--font-title); font-weight:300; font-size:12px; color:var(--fbr-teal); margin-bottom:4px;">04</div><div style="font-family:var(--font-title); font-weight:700; font-size:16px; color:#fff;">Food Delivery</div></div></div>
+        <div style="position:relative; aspect-ratio:1/0.68; border-radius:18px; overflow:hidden; box-shadow:0 8px 24px rgba(0,46,93,0.08); transition:transform .22s;" style-hover="transform:translateY(-4px);"><img src="assets/imagery/sector-retail.jpg" alt="Retail" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;"><div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,46,93,0) 40%, rgba(0,46,93,0.84)); pointer-events:none;"></div><div style="position:absolute; left:18px; bottom:16px; pointer-events:none;"><div style="font-family:var(--font-title); font-weight:300; font-size:12px; color:var(--fbr-teal); margin-bottom:4px;">05</div><div style="font-family:var(--font-title); font-weight:700; font-size:16px; color:#fff;">Retail</div></div></div>
+        <div style="position:relative; aspect-ratio:1/0.68; border-radius:18px; overflow:hidden; box-shadow:0 8px 24px rgba(0,46,93,0.08); transition:transform .22s;" style-hover="transform:translateY(-4px);"><img src="assets/imagery/sector-mobility.jpg" alt="Mobility" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;"><div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,46,93,0) 40%, rgba(0,46,93,0.84)); pointer-events:none;"></div><div style="position:absolute; left:18px; bottom:16px; pointer-events:none;"><div style="font-family:var(--font-title); font-weight:300; font-size:12px; color:var(--fbr-teal); margin-bottom:4px;">06</div><div style="font-family:var(--font-title); font-weight:700; font-size:16px; color:#fff;">Mobility</div></div></div>
+        <div style="position:relative; aspect-ratio:1/0.68; border-radius:18px; overflow:hidden; box-shadow:0 8px 24px rgba(0,46,93,0.08); transition:transform .22s;" style-hover="transform:translateY(-4px);"><img src="assets/imagery/sector-airplane.jpg" alt="Travel" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;"><div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,46,93,0) 40%, rgba(0,46,93,0.84)); pointer-events:none;"></div><div style="position:absolute; left:18px; bottom:16px; pointer-events:none;"><div style="font-family:var(--font-title); font-weight:300; font-size:12px; color:var(--fbr-teal); margin-bottom:4px;">07</div><div style="font-family:var(--font-title); font-weight:700; font-size:16px; color:#fff;">Travel</div></div></div>
+        <div style="position:relative; aspect-ratio:1/0.68; border-radius:18px; overflow:hidden; box-shadow:0 8px 24px rgba(0,46,93,0.08); transition:transform .22s" style-hover="transform:translateY(-4px);"><img src="assets/imagery/sector-phone.jpg" alt="B2B Services" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;"><div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,46,93,0) 40%, rgba(0,46,93,0.84)); pointer-events:none;"></div><div style="position:absolute; left:18px; bottom:16px; pointer-events:none;"><div style="font-family:var(--font-title); font-weight:300; font-size:12px; color:var(--fbr-teal); margin-bottom:4px;">08</div><div style="font-family:var(--font-title); font-weight:700; font-size:16px; color:#fff;">B2B Services</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ METHOD (gray band) ============ -->
+  <section style="background:var(--fbr-paper); padding:116px 24px;">
+    <div style="max-width:1180px; margin:0 auto;">
+      <div style="text-align:center; max-width:640px; margin:0 auto 52px;">
+        <div style="display:inline-flex; align-items:center; gap:9px; font-family:var(--font-title); font-weight:700; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:var(--fbr-teal); margin-bottom:18px;"><span style="width:7px; height:7px; border-radius:50%; background:var(--fbr-pink);"></span>Metodo</div>
+        <h2 style="font-family:var(--font-display); font-weight:700; font-size:40px; line-height:1.08; letter-spacing:-0.02em; color:var(--fbr-navy); margin:0 0 14px;">Una struttura che <span style="color:var(--fbr-teal);">genera crescita</span></h2>
+        <p style="font-family:var(--font-text); font-size:16px; line-height:1.6; color:var(--text-body); margin:0;">Un percorso progressivo che attiva rapidamente il servizio e lo consolida su performance misurabili nel tempo.</p>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-bottom:32px;">
+        <div style="background:#fff; border:1px solid var(--fbr-line); border-radius:18px; padding:32px;">
+          <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:18px;"><div style="width:46px; height:46px; border-radius:13px; background:var(--fbr-teal-15); display:flex; align-items:center; justify-content:center; color:var(--fbr-navy);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="m21 21-4.3-4.3"></path></svg></div><span style="font-family:var(--font-title); font-weight:300; font-size:32px; color:var(--fbr-navy-35);">01</span></div>
+          <h3 style="font-family:var(--font-title); font-weight:700; font-size:18px; color:var(--fbr-navy); margin:0 0 10px;">Assessment &amp; Understanding</h3>
+          <p style="font-family:var(--font-text); font-size:14.5px; line-height:1.6; color:var(--text-body); margin:0;">Analisi as-is dei tuoi flussi e progettazione del servizio su misura, con tracciamento corretto di chiamate e contatti.</p>
+        </div>
+        <div style="background:#fff; border:1px solid var(--fbr-line); border-radius:18px; padding:32px;">
+          <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:18px;"><div style="width:46px; height:46px; border-radius:13px; background:var(--fbr-teal-15); display:flex; align-items:center; justify-content:center; color:var(--fbr-navy);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4"></path><path d="m16.2 7.8 2.9-2.9"></path><path d="M18 12h4"></path><circle cx="12" cy="12" r="4"></circle><path d="M4.9 4.9 7.8 7.8"></path></svg></div><span style="font-family:var(--font-title); font-weight:300; font-size:32px; color:var(--fbr-navy-35);">02</span></div>
+          <h3 style="font-family:var(--font-title); font-weight:700; font-size:18px; color:var(--fbr-navy); margin:0 0 10px;">Ramp-up &amp; Set-up</h3>
+          <p style="font-family:var(--font-text); font-size:14.5px; line-height:1.6; color:var(--text-body); margin:0;">Definizione dell'operating model to-be, set-up del team dedicato, presidio dei processi e integrazione con i tuoi sistemi.</p>
+        </div>
+        <div style="background:#fff; border:1px solid var(--fbr-line); border-radius:18px; padding:32px;">
+          <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:18px;"><div style="width:46px; height:46px; border-radius:13px; background:var(--fbr-teal-15); display:flex; align-items:center; justify-content:center; color:var(--fbr-navy);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"></path><path d="M7 16v-4"></path><path d="M12 16V8"></path><path d="M17 16v-6"></path></svg></div><span style="font-family:var(--font-title); font-weight:300; font-size:32px; color:var(--fbr-navy-35);">03</span></div>
+          <h3 style="font-family:var(--font-title); font-weight:700; font-size:18px; color:var(--fbr-navy); margin:0 0 10px;">Go-live &amp; Continuous Improvement</h3>
+          <p style="font-family:var(--font-text); font-size:14.5px; line-height:1.6; color:var(--text-body); margin:0;">Dashboard integrata e fine tuning continuo su KPI quantitativi e qualitativi, con review e report settimanali.</p>
+        </div>
+      </div>
+      <div style="background:#fff; border:1px solid var(--fbr-line); border-radius:18px; padding:22px 30px; display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap;">
+        <span style="font-family:var(--font-title); font-weight:700; font-size:17px; color:var(--fbr-navy);">Inizia con un progetto pilota. Scala con fiducia.</span>
+        <a href="#" style="display:inline-flex; align-items:center; gap:9px; font-family:var(--font-text); font-weight:700; font-size:14px; color:#fff; background:var(--fbr-navy); padding:13px 24px; border-radius:12px; text-decoration:none; transition:all .2s;" style-hover="background:var(--fbr-black);">Prenota una call <span style="font-size:15px;">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHY (white band) ============ -->
+  <section style="padding:116px 24px;">
+    <div style="max-width:1180px; margin:0 auto;">
+      <h2 style="font-family:var(--font-display); font-weight:700; font-size:34px; line-height:1.12; letter-spacing:-0.02em; color:var(--fbr-navy); margin:0 0 40px; max-width:760px;">L'agilità di un partner vicino, la <span style="color:var(--fbr-teal);">solidità</span> di una struttura certificata</h2>
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:0;">
+        <div style="padding:6px 36px 6px 0; border-right:1px solid var(--fbr-line);">
+          <div style="width:40px; height:4px; border-radius:4px; background:var(--fbr-teal); margin-bottom:20px;"></div>
+          <h3 style="font-family:var(--font-title); font-weight:700; font-size:18px; color:var(--fbr-navy); margin:0 0 12px;">Attivazione rapida</h3>
+          <p style="font-family:var(--font-text); font-size:14.5px; line-height:1.6; color:var(--text-body); margin:0;">Set-up veloci che assorbono i picchi stagionali, senza sovradimensionare la tua struttura.</p>
+        </div>
+        <div style="padding:6px 36px; border-right:1px solid var(--fbr-line);">
+          <div style="width:40px; height:4px; border-radius:4px; background:var(--fbr-pink); margin-bottom:20px;"></div>
+          <h3 style="font-family:var(--font-title); font-weight:700; font-size:18px; color:var(--fbr-navy); margin:0 0 12px;">Tutto sotto controllo</h3>
+          <p style="font-family:var(--font-text); font-size:14.5px; line-height:1.6; color:var(--text-body); margin:0;">Supervisione avanzata e dashboard in tempo reale: sai sempre come va il servizio.</p>
+        </div>
+        <div style="padding:6px 0 6px 36px;">
+          <div style="width:40px; height:4px; border-radius:4px; background:var(--fbr-navy); margin-bottom:20px;"></div>
+          <h3 style="font-family:var(--font-title); font-weight:700; font-size:18px; color:var(--fbr-navy); margin:0 0 12px;">Governance europea</h3>
+          <p style="font-family:var(--font-text); font-size:14.5px; line-height:1.6; color:var(--text-body); margin:0;">Procedure conformi, audit on-site e allineamento alla data protection UE.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA (gradient box — the only one) ============ -->
+  <section style="padding:0 24px 116px;">
+    <div style="max-width:1180px; margin:0 auto; background:linear-gradient(135deg, var(--fbr-teal-15) 0%, #ffffff 46%, var(--fbr-pink-15) 100%); border:1px solid var(--fbr-line); border-radius:28px; padding:76px 56px; text-align:center;">
+      <div style="display:inline-flex; align-items:center; gap:9px; font-family:var(--font-title); font-weight:700; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:var(--fbr-pink); margin-bottom:18px;"><span style="width:7px; height:7px; border-radius:50%; background:var(--fbr-teal);"></span>Try &amp; Buy</div>
+      <h2 style="font-family:var(--font-display); font-weight:700; font-size:42px; line-height:1.08; letter-spacing:-0.025em; color:var(--fbr-navy); margin:0 0 16px;">Inizia con un pilota.<br>Scala con <span style="color:var(--fbr-teal);">fiducia</span>.</h2>
+      <p style="font-family:var(--font-text); font-size:17px; line-height:1.6; color:var(--text-body); margin:0 auto 32px; max-width:580px;">Con la formula Try &amp; Buy testi il servizio fino a 3 mesi prima di sceglierci come partner. Analizziamo i tuoi flussi, definiamo insieme il perimetro e attiviamo un team dedicato a rischio contenuto.</p>
+      <div style="display:flex; align-items:center; justify-content:center; gap:14px; flex-wrap:wrap;">
+        <a href="#" style="display:inline-flex; align-items:center; gap:9px; font-family:var(--font-text); font-weight:700; font-size:15px; color:#fff; background:var(--fbr-navy); padding:16px 30px; border-radius:14px; text-decoration:none; transition:all .2s; box-shadow:0 10px 26px rgba(0,46,93,0.2);" style-hover="background:var(--fbr-black); transform:translateY(-2px);">Parliamo del tuo progetto <span style="font-size:16px;">→</span></a>
+        <a href="#" style="display:inline-flex; align-items:center; gap:9px; font-family:var(--font-text); font-weight:700; font-size:15px; color:var(--fbr-navy); background:#fff; padding:16px 30px; border:1px solid var(--fbr-navy-35); border-radius:14px; text-decoration:none; transition:all .2s;" style-hover="border-color:var(--fbr-navy);">Esplora i servizi</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background:linear-gradient(180deg, #00386f, var(--fbr-navy)); padding:0 24px 36px; border-radius:32px 32px 0 0;">
+    <div style="max-width:1240px; margin:0 auto;">
+      <!-- Newsletter -->
+      <div style="display:flex; align-items:center; justify-content:space-between; gap:32px; padding:44px 0; border-bottom:1px solid rgba(255,255,255,0.14); flex-wrap:wrap;">
+        <div>
+          <div style="font-family:var(--font-title); font-weight:700; font-size:16px; color:#fff; margin-bottom:6px;">Iscriviti alla newsletter</div>
+          <div style="font-family:var(--font-text); font-size:14px; color:rgba(255,255,255,0.62);">Aggiornamenti BPO, casi studio e risorse per i decision maker.</div>
+        </div>
+        <div style="display:flex; flex:none;">
+          <input type="email" placeholder="La tua email" style="font-family:var(--font-text); font-size:14px; padding:13px 18px; border:1px solid rgba(255,255,255,0.2); border-right:none; border-radius:12px 0 0 12px; background:rgba(255,255,255,0.08); color:#fff; outline:none; width:270px;">
+          <button style="font-family:var(--font-text); font-weight:700; font-size:13.5px; color:var(--fbr-navy); background:var(--fbr-teal); padding:13px 22px; border:none; border-radius:0 12px 12px 0; cursor:pointer; white-space:nowrap;">Iscriviti →</button>
+        </div>
+      </div>
+      <!-- Main columns -->
+      <div style="display:grid; grid-template-columns:1.3fr 1fr 1fr 1fr 1fr; gap:36px; padding:48px 0; border-bottom:1px solid rgba(255,255,255,0.14);">
+        <div>
+          <img src="assets/logos/WAF_vert_trasp_payoff.png" alt="We Are Fiber" style="height: 160px; width: auto; margin-bottom: 40px; display: block">
+          <div style="display:flex; gap:10px;">
+            <a href="#" style="display:flex; align-items:center; justify-content:center; width:36px; height:36px; border-radius:9px; background:rgba(255,255,255,0.1); color:#fff; text-decoration:none; transition:background .2s;" style-hover="background:rgba(255,255,255,0.22);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </a>
+            <a href="#" style="display:flex; align-items:center; justify-content:center; width:36px; height:36px; border-radius:9px; background:rgba(255,255,255,0.1); color:#fff; text-decoration:none; transition:background .2s;" style-hover="background:rgba(255,255,255,0.22);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="#" style="display:flex; align-items:center; justify-content:center; width:36px; height:36px; border-radius:9px; background:rgba(255,255,255,0.1); color:#fff; text-decoration:none; transition:background .2s;" style-hover="background:rgba(255,255,255,0.22);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+            </a>
+            <a href="#" style="display:flex; align-items:center; justify-content:center; width:36px; height:36px; border-radius:9px; background:rgba(255,255,255,0.1); color:#fff; text-decoration:none; transition:background .2s;" style-hover="background:rgba(255,255,255,0.22);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.3 6.3 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.19 8.19 0 0 0 4.79 1.53V6.76a4.85 4.85 0 0 1-1.02-.07z"></path></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <div style="font-family:var(--font-title); font-weight:700; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--fbr-teal); margin-bottom:16px;">Servizi</div>
+          <div style="display:flex; flex-direction:column; gap:11px;">
+            <a href="#" class="waf-link" style="font-family:var(--font-text); font-size:14px; color:rgba(255,255,255,0.72); text-decoration:none;">Customer Service</a>
+            <a href="#" class="waf-link" style="font-family:var(--font-text); font-size:14px; color:rgba(255,255,255,0.72); text-decoration:none;">Back Office</a>
+            <a href="#" class="waf-link" style="font-family:var(--font-text); font-size:14px; color:rgba(255,255,255,0.72); text-decoration:none;">Process Management</a>
+            <a href="#" class="waf-link" style="font-family:var(--font-text); font-size:14px; color:rgba(255,255,255,0.72); text-decoration:none;">Outbound Marketing</a>
+          </div>
+        </div>
+        <div>
+          <div style="font-family:var(--font-title); font-weight:700; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--fbr-teal); margin-bottom:16px;">Settori</div>
+          <div style="display:flex; flex-direction:column; gap:11px;">
+            <a href="#" class="waf-link" style="font-family:var(--font-text); font-size:14px; color:rgba(255,255,255,0.72); text-decoration:none;">Healthcare</a>
+            <a href="#" class="waf-link" style="font-family:var(--font-text); font-size:14px; color:rgba(255,255,255,0.72); text-decoration:none;">E-commerce</a>
+            <a href="#" class="waf-link" style="font-family:var(--font-text); font-size:14px; color:rgba(255,255,255,0.72); text-decoration:none;">Food Delivery</a>
+            <a href="#" class="waf-link" style="font-family:var(--font-text); font-size:14px; color:rgba(255,255,255,0.72); text-decoration:none;">Retail</a>
+            <a href="#" class="waf-link" style="font-family:var(--font-text); font-size:14px; color:rgba(255,255,255,0.72); text-decoration:none;">Finance &amp; Insurance</a>
+            <a href="#" class="waf-link" style="font-family:var(--font-text); font-size:14px; color:rgba(255,255,255,0.72); text-decoration:none;">Mobility</a>
+            <a href="#" class="waf-link" style="font-family:var(--font-text); font-size:14px; color:rgba(255,255,255,0.72); text-decoration:none;">Travel</a>
+            <a href="#" class="waf-link" style="font-family:var(--font-text); font-size:14px; color:rgba(255,255,255,0.72); text-decoration:none;">B2B Services</a>
+          </div>
+        </div>
+        <div>
+          <div style="font-family:var(--font-title); font-weight:700; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--fbr-teal); margin-bottom:16px;">Azienda</div>
+          <div style="display:flex; flex-direction:column; gap:11px;">
+            <a href="#" class="waf-link" style="font-family:var(--font-text); font-size:14px; color:rgba(255,255,255,0.72); text-decoration:none;">Chi siamo</a>
+            <a href="#" class="waf-link" style="font-family:var(--font-text); font-size:14px; color:rgba(255,255,255,0.72); text-decoration:none;">Governance</a>
+            <a href="#" class="waf-link" style="font-family:var(--font-text); font-size:14px; color:rgba(255,255,255,0.72); text-decoration:none;">Certificazioni</a>
+            <a href="#" class="waf-link" style="font-family:var(--font-text); font-size:14px; color:rgba(255,255,255,0.72); text-decoration:none;">Careers</a>
+            <a href="#" class="waf-link" style="font-family:var(--font-text); font-size:14px; color:rgba(255,255,255,0.72); text-decoration:none;">Contatti</a>
+          </div>
+        </div>
+        <div>
+          <div style="font-family:var(--font-title); font-weight:700; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--fbr-teal); margin-bottom:16px;">Blog</div>
+          <div style="display:flex; flex-direction:column; gap:11px;">
+            <a href="#" class="waf-link" style="font-family:var(--font-text); font-size:14px; color:rgba(255,255,255,0.72); text-decoration:none;">Tutti gli articoli</a>
+            <a href="#" class="waf-link" style="font-family:var(--font-text); font-size:14px; color:rgba(255,255,255,0.72); text-decoration:none;">Customer Experience</a>
+            <a href="#" class="waf-link" style="font-family:var(--font-text); font-size:14px; color:rgba(255,255,255,0.72); text-decoration:none;">BPO &amp; Operations</a>
+            <a href="#" class="waf-link" style="font-family:var(--font-text); font-size:14px; color:rgba(255,255,255,0.72); text-decoration:none;">Social Responsibility</a>
+          </div>
+        </div>
+      </div>
+      <!-- Bottom bar -->
+      <div style="display:flex; align-items:center; justify-content:space-between; padding-top:22px; flex-wrap:wrap; gap:12px;">
+        <span style="font-family:var(--font-text); font-size:13px; color:rgba(255,255,255,0.45);">© 2026&nbsp;<span style="font-family: Inter, system-ui, -apple-system, sans-serif; font-size: 12.5px;">Fiber Group Sh.p.k.&nbsp;|&nbsp;</span>We Are Fiber — Outsource. Human force.</span>
+        <span style="font-family:var(--font-text); font-size:13px; color:rgba(255,255,255,0.45);">Privacy · Cookie · Whistleblowing</span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { menuServ: false, menuAz: false };
+
+  renderVals() {
+    const clients = ["Fastweb", "Trivago", "UNICA", "BricoBravo", "Vodafone"];
+    return {
+      menuServ: this.state.menuServ,
+      menuAz: this.state.menuAz,
+      openServ: () => this.setState({ menuServ: true }),
+      closeServ: () => this.setState({ menuServ: false }),
+      openAz: () => this.setState({ menuAz: true }),
+      closeAz: () => this.setState({ menuAz: false }),
+      servCaret: this.state.menuServ ? "rotate(180deg)" : "rotate(0deg)",
+      azCaret: this.state.menuAz ? "rotate(180deg)" : "rotate(0deg)",
+
+      numbers: [
+        { v: "+15", label: "Anni di esperienza nel settore BPO" },
+        { v: "+1.300", label: "Operatori · team multilingua" },
+        { v: "+6", label: "Lingue gestite · certificate CEFR" },
+        { v: "24/7", label: "Copertura continua multi-country" }
+      ],
+
+      teamStats: [
+        { v: "~83%", label: "Operatori con laurea" },
+        { v: "+6", label: "Lingue gestite, certificate CEFR" },
+        { v: "+1.300", label: "Operatori multilingua dedicati" },
+        { v: "24/7", label: "Copertura del servizio" }
+      ],
+
+      sedi: [
+        { code: "AL", tag: "Headquarters", city: "Albania", langs: "Multilingua", desc: "Cuore operativo del gruppo: workforce multilingua, formazione interna e capacità H24." },
+        { code: "IT", tag: "Sede Italia", city: "Napoli", langs: "Italiano & Inglese", desc: "Presidio commerciale e di coordinamento sul mercato italiano, vicino ai clienti." },
+        { code: "UK", tag: "Sede UK", city: "Londra", langs: "Inglese", desc: "Punto di riferimento per i mercati internazionali e i clienti di lingua inglese." },
+        { code: "XK", tag: "New site · DACH", city: "Pristina", langs: "Tedesco & Inglese", desc: "Talent pool dedicato ai programmi DACH." }
+      ],
+
+      clients,
+      clientsLoop: [...clients, ...clients, ...clients, ...clients],
+
+      tagsCS: ["Ticket Management", "Help Desk", "Live Chat", "Email & Social", "Technical Support"],
+      tagsBO: ["Data Entry", "Order Management", "Document Mgmt", "Billing", "Reporting"],
+      tagsPM: ["Control Room", "Quality Audit", "RPA & Automation"],
+      tagsOM: ["Survey & Research", "Loyalty", "Lead Generation"],
+
+      navServices: [
+        { title: "Customer Service", items: ["Ticket Management", "Inbound & Help Desk", "Live Chat", "Email & Social Care", "Supporto multilingua", "Technical Support"] },
+        { title: "Back Office", items: ["Data Entry", "Order Management", "Document Management", "Billing & Payments", "Reporting"] },
+        { title: "Process Management", items: ["Control Room", "Quality Audit", "RPA & Automation"] },
+        { title: "Outbound Marketing", items: ["Survey & Market Research", "Campagne Loyalty", "Lead Generation"] }
+      ],
+
+      navAzienda: ["Chi siamo", "Governance", "Certificazioni", "Contatti"]
+    };
+  }
+}
+</script>
+</body>
+</html>

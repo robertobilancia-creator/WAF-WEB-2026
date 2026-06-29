@@ -1,0 +1,54 @@
+/* ============================================================
+   FIBER — Typography
+   Display  → UniType Fiber (substituted: Inter) · white grounds only, ≥40px
+   Title    → Fabrikat Mono · titles / subtitles / eyebrows · NEVER body. UPPERCASE on colour
+   Text     → Raleway · paragraphs only
+   ============================================================ */
+:root {
+  /* ---- Families ---- */
+  --font-display: 'Inter', system-ui, -apple-system, sans-serif; /* SUBSTITUTE for UniType Fiber */
+  --font-title:   'Fabrikat Mono', ui-monospace, 'SFMono-Regular', monospace;
+  --font-text:    'Raleway', system-ui, -apple-system, sans-serif;
+  --font-mono:    'Fabrikat Mono', ui-monospace, monospace;
+
+  /* ---- Weights ---- */
+  --fw-hairline: 100; /* @kind font */
+  --fw-thin:     200; /* @kind font */
+  --fw-light:    300; /* @kind font */
+  --fw-regular:  400; /* @kind font */
+  --fw-medium:   500; /* @kind font */
+  --fw-bold:     700; /* @kind font */
+  --fw-black:    900; /* @kind font */
+
+  /* ---- Type scale (1.250 major-third, 16px base) ---- */
+  --fs-display-xl: 96px;
+  --fs-display:    64px;
+  --fs-h1:         44px;
+  --fs-h2:         32px;
+  --fs-h3:         24px;
+  --fs-title:      20px;   /* eyebrow / label scale floor for titles */
+  --fs-lg:         18px;
+  --fs-body:       16px;
+  --fs-sm:         14px;
+  --fs-xs:         12px;
+
+  /* ---- Line heights ---- */
+  --lh-tight:   1.05;   /* @kind font */
+  --lh-snug:    1.2;    /* @kind font */
+  --lh-normal:  1.5;    /* @kind font */
+  --lh-relaxed: 1.7;    /* @kind font */
+
+  /* ---- Letter spacing ---- */
+  --ls-display:  -0.01em; /* @kind font */
+  --ls-title:     0.04em;   /* mono titles breathe a little @kind font */
+  --ls-caps:      0.12em;   /* UPPERCASE eyebrows  @kind font */
+  --ls-body:      0;        /* @kind font */
+}
+
+/* ---- Optional helper roles (not required, handy for kits) ---- */
+:root {
+  --type-eyebrow-font:  var(--font-title);
+  --type-eyebrow-size:  var(--fs-xs);
+  --type-eyebrow-weight: var(--fw-bold);
+  --type-eyebrow-spacing: var(--ls-caps);
+}

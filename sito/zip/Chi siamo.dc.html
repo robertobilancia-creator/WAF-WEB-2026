@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/we-are-fiber-design-system-3a2efe15-3733-4021-ad34-dd44ab3d81b6/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/we-are-fiber-design-system-3a2efe15-3733-4021-ad34-dd44ab3d81b6/tokens/colors.css">
+<link rel="stylesheet" href="_ds/we-are-fiber-design-system-3a2efe15-3733-4021-ad34-dd44ab3d81b6/tokens/typography.css">
+<link rel="stylesheet" href="_ds/we-are-fiber-design-system-3a2efe15-3733-4021-ad34-dd44ab3d81b6/tokens/spacing.css">
+<link rel="stylesheet" href="_ds/we-are-fiber-design-system-3a2efe15-3733-4021-ad34-dd44ab3d81b6/styles.css">
+<script src="_ds/we-are-fiber-design-system-3a2efe15-3733-4021-ad34-dd44ab3d81b6/_ds_bundle.js"></script>
+<style>
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; padding:0; background:#fff; }
+  ::selection{ background:var(--fbr-teal); color:var(--fbr-navy); }
+  .waf-link:hover{ color:var(--fbr-pink) !important; }
+</style>
+</helmet>
+
+<div style="background:#fff; font-family:var(--font-text); color:var(--fbr-navy);">
+
+  <!-- HEADER -->
+  <div style="position:sticky; top:16px; z-index:100; padding:0 24px;">
+    <header style="max-width:1240px; margin:16px auto 0; display:flex; align-items:center; justify-content:space-between; height:86px; padding:0 16px 0 26px; background:rgba(255,255,255,0.88); backdrop-filter:blur(14px); border:1px solid var(--fbr-line); border-radius:18px; box-shadow:0 10px 34px rgba(0,46,93,0.08);">
+      <a href="WeAreFiber Home OK.dc.html"><img src="assets/logos/WAF_orizz_color.png" alt="We Are Fiber" style="height:45px; width:auto; display:block;"></a>
+      <nav style="display:flex; align-items:center; gap:26px;">
+        <div onMouseEnter="{{ openServ }}" onMouseLeave="{{ closeServ }}" style="position:relative; height:86px; display:flex; align-items:center;">
+          <span style="display:inline-flex; align-items:center; gap:6px; font-family:var(--font-text); font-weight:600; font-size:14.5px; color:var(--fbr-navy); cursor:pointer;">Servizi <span style="font-size:9px; color:var(--fbr-teal); transform:{{ servCaret }}; transition:transform .2s;">▾</span></span>
+          <sc-if value="{{ menuServ }}" hint-placeholder-val="{{ false }}">
+            <div style="position:absolute; top:80px; left:0; width:940px; background:#fff; border:1px solid var(--fbr-line); border-radius:20px; box-shadow:0 28px 70px rgba(0,46,93,0.18); padding:34px 38px; display:grid; grid-template-columns:repeat(4,1fr); gap:30px;">
+              <sc-for list="{{ navServices }}" as="col" hint-placeholder-count="4">
+                <div>
+                  <div style="font-family:var(--font-title); font-weight:700; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--fbr-teal); padding-bottom:12px; margin-bottom:14px; border-bottom:1px solid var(--fbr-line);">{{ col.title }}</div>
+                  <div style="display:flex; flex-direction:column; gap:12px;">
+                    <sc-for list="{{ col.items }}" as="it" hint-placeholder-count="4">
+                      <a href="#" class="waf-link" style="font-family:var(--font-text); font-size:14px; color:var(--text-body); text-decoration:none; line-height:1.25; transition:color .15s;">{{ it }}</a>
+                    </sc-for>
+                  </div>
+                </div>
+              </sc-for>
+            </div>
+          </sc-if>
+        </div>
+        <a href="#" class="waf-link" style="display:inline-flex; align-items:center; gap:6px; font-family:var(--font-text); font-weight:600; font-size:14.5px; color:var(--fbr-navy); text-decoration:none;">Settori <span style="font-size:9px; color:var(--fbr-teal);">▾</span></a>
+        <a href="#" class="waf-link" style="font-family:var(--font-text); font-weight:600; font-size:14.5px; color:var(--fbr-navy); text-decoration:none;">Metodo</a>
+        <div onMouseEnter="{{ openAz }}" onMouseLeave="{{ closeAz }}" style="position:relative; height:86px; display:flex; align-items:center;">
+          <span style="display:inline-flex; align-items:center; gap:6px; font-family:var(--font-text); font-weight:600; font-size:14.5px; color:var(--fbr-pink); cursor:pointer; border-bottom:2px solid var(--fbr-pink); padding-bottom:2px;">Azienda <span style="font-size:9px; color:var(--fbr-pink);">▾</span></span>
+          <sc-if value="{{ menuAz }}" hint-placeholder-val="{{ false }}">
+            <div style="position:absolute; top:80px; left:50%; transform:translateX(-50%); width:230px; background:#fff; border:1px solid var(--fbr-line); border-radius:18px; box-shadow:0 28px 70px rgba(0,46,93,0.18); padding:18px;">
+              <div style="display:flex; flex-direction:column; gap:4px;">
+                <sc-for list="{{ navAzienda }}" as="it" hint-placeholder-count="4">
+                  <a href="#" class="waf-link" style="font-family:var(--font-text); font-size:14.5px; color:var(--text-body); text-decoration:none; padding:9px 12px; border-radius:10px; transition:color .15s;">{{ it }}</a>
+                </sc-for>
+              </div>
+            </div>
+          </sc-if>
+        </div>
+        <a href="#" class="waf-link" style="display:inline-flex; align-items:center; gap:6px; font-family:var(--font-text); font-weight:600; font-size:14.5px; color:var(--fbr-navy); text-decoration:none;">Blog <span style="font-size:9px; color:var(--fbr-teal);">▾</span></a>
+        <a href="#" class="waf-link" style="font-family:var(--font-text); font-weight:600; font-size:14.5px; color:var(--fbr-navy); text-decoration:none;">Careers</a>
+      </nav>
+      <div style="display:flex; align-items:center; gap:18px;">
+        <div style="font-family:var(--font-title); font-weight:500; font-size:12.5px;"><span style="color:var(--fbr-navy);">IT</span> <span style="color:var(--fbr-navy-35);">/</span> <span style="color:var(--fbr-navy-50);">EN</span></div>
+        <a href="#" style="display:inline-flex; align-items:center; gap:8px; font-family:var(--font-text); font-weight:700; font-size:13.5px; color:#fff; background:var(--fbr-navy); padding:12px 20px; border-radius:12px; text-decoration:none; transition:all .2s; box-shadow:0 6px 18px rgba(0,46,93,0.18);" style-hover="background:var(--fbr-black); transform:translateY(-1px);">Prenota una call</a>
+      </div>
+    </header>
+  </div>
+
+  <!-- ① HERO — tipografico puro, no immagine -->
+  <section style="position:relative; overflow:hidden; padding:100px 24px 96px; border-bottom:1px solid var(--fbr-line);">
+    <div style="position:absolute; bottom:-18px; right:max(24px, calc(50% - 590px)); font-family:var(--font-title); font-weight:700; font-size:clamp(42px, 12vw, 150px); line-height:1; color:var(--fbr-teal); opacity:0.045; white-space:nowrap; pointer-events:none; letter-spacing:-0.04em; user-select:none;">We Are Fiber</div>
+    <div style="max-width:1180px; margin:0 auto; position:relative;">
+      <div style="display:flex; align-items:center; gap:8px; font-family:var(--font-title); font-size:12px; letter-spacing:0.06em; color:var(--fbr-navy-50); margin-bottom:36px;">
+        <a href="WeAreFiber Home OK.dc.html" class="waf-link" style="text-decoration:none; color:var(--fbr-navy-50);">Home</a>
+        <span>›</span><span style="color:var(--fbr-navy-50);">Azienda</span>
+        <span>›</span><span style="color:var(--fbr-navy);">Chi siamo</span>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:end;">
+        <div>
+          <div style="display:inline-flex; align-items:center; gap:9px; font-family:var(--font-title); font-weight:700; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:var(--fbr-teal); margin-bottom:22px;"><span style="width:7px; height:7px; border-radius:50%; background:var(--fbr-pink);"></span>Chi siamo</div>
+          <h1 style="font-family:var(--font-display); font-weight:700; font-size:72px; line-height:1.01; letter-spacing:-0.03em; color:var(--fbr-navy); margin:0;">Outsource.<br><span style="color:var(--fbr-teal);">Human</span><br>force.</h1>
+        </div>
+        <div style="padding-bottom:8px;">
+          <p style="font-family:var(--font-text); font-size:20px; line-height:1.65; color:var(--text-body); margin:0 0 18px;">Da oltre 15 anni progettiamo modelli operativi BPO scalabili per le aziende, con oltre 1.300 persone tra Albania, Kosovo e Italia.</p>
+          <p style="font-family:var(--font-text); font-size:17px; line-height:1.65; color:var(--text-muted); margin:0 0 36px;">Persone, processi e tecnologia al servizio delle tue performance — su ogni canale e in ogni lingua, disponibili 24/7.</p>
+          <div style="display:flex; gap:14px; flex-wrap:wrap;">
+            <a href="#" style="display:inline-flex; align-items:center; gap:9px; font-family:var(--font-text); font-weight:700; font-size:14px; color:#fff; background:var(--fbr-navy); padding:14px 24px; border-radius:12px; text-decoration:none; transition:all .2s; box-shadow:0 10px 26px rgba(0,46,93,0.18);" style-hover="background:var(--fbr-black); transform:translateY(-2px);">Parliamo del tuo progetto →</a>
+            <a href="#" style="display:inline-flex; align-items:center; gap:9px; font-family:var(--font-text); font-weight:700; font-size:14px; color:var(--fbr-navy); background:#fff; padding:14px 24px; border:1px solid var(--fbr-navy-35); border-radius:12px; text-decoration:none; transition:all .2s;" style-hover="border-color:var(--fbr-navy);">Scarica la company profile</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ② NUMERI -->
+  <section style="background:var(--fbr-paper); padding:80px 24px;">
+    <div style="max-width:1180px; margin:0 auto;">
+      <div style="display:inline-flex; align-items:center; gap:9px; font-family:var(--font-title); font-weight:700; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:var(--fbr-teal); margin-bottom:32px;"><span style="width:7px; height:7px; border-radius:50%; background:var(--fbr-pink);"></span>Il team in numeri</div>
+      <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:0; border:1px solid var(--fbr-line); border-radius:20px; overflow:hidden; background:#fff;">
+        <sc-for list="{{ numeri }}" as="n" hint-placeholder-count="4">
+          <div style="padding:44px 36px; border-right:1px solid var(--fbr-line); position:relative; overflow:hidden;">
+            <div style="position:absolute; top:-10px; right:12px; font-family:var(--font-title); font-weight:700; font-size:96px; line-height:1; color:var(--fbr-teal); opacity:0.07; pointer-events:none; user-select:none;">{{ n.bg }}</div>
+            <div style="font-family:var(--font-title); font-weight:300; font-size:52px; line-height:1; color:var(--fbr-navy); margin-bottom:12px; position:relative;">{{ n.v }}<span style="color:var(--fbr-teal); font-size:32px;">{{ n.unit }}</span></div>
+            <div style="width:36px; height:3px; border-radius:4px; background:var(--fbr-pink); margin-bottom:12px;"></div>
+            <div style="font-family:var(--font-text); font-size:14px; line-height:1.5; color:var(--text-body);">{{ n.label }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- ③ STORIA -->
+  <section style="padding:116px 24px;">
+    <div style="max-width:1180px; margin:0 auto; display:grid; grid-template-columns:0.85fr 1.15fr; gap:80px; align-items:start;">
+      <div style="position:sticky; top:120px;">
+        <div style="display:inline-flex; align-items:center; gap:9px; font-family:var(--font-title); font-weight:700; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:var(--fbr-teal); margin-bottom:18px;"><span style="width:7px; height:7px; border-radius:50%; background:var(--fbr-pink);"></span>La nostra storia</div>
+        <h2 style="font-family:var(--font-display); font-weight:700; font-size:44px; line-height:1.06; letter-spacing:-0.02em; color:var(--fbr-navy); margin:0;">Nati nel 2006, <span style="color:var(--fbr-teal);">cresciuti con i nostri partner</span></h2>
+      </div>
+      <div>
+        <p style="font-family:var(--font-text); font-size:18px; line-height:1.75; color:var(--text-body); margin:0 0 22px;">We Are Fiber nasce nel 2006 dalla visione di Daniele Volpe e Francesco Marotta. Da allora affianchiamo le aziende come partner operativo, con metodo, passione e professionalità: gestiamo il customer care, i processi di back office e l'automazione, con servizi flessibili e adattabili tanto alle grandi imprese quanto alle PMI.</p>
+        <!-- Smartsourcing pull-quote -->
+        <div style="border-left:3px solid var(--fbr-teal); padding:20px 24px; margin:28px 0; background:var(--fbr-teal-15); border-radius:0 14px 14px 0;">
+          <div style="font-family:var(--font-title); font-weight:700; font-size:13px; letter-spacing:0.1em; text-transform:uppercase; color:var(--fbr-teal); margin-bottom:8px;">Il modello Smartsourcing</div>
+          <p style="font-family:var(--font-text); font-size:17px; line-height:1.65; color:var(--fbr-navy); margin:0; font-style:italic;">Non un semplice fornitore, ma un team dedicato che diventa un'estensione della tua azienda.</p>
+        </div>
+        <!-- Timeline verticale -->
+        <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:0; margin-top:36px; border-top:1px solid var(--fbr-line); border-bottom:1px solid var(--fbr-line);">
+          <sc-for list="{{ timeline }}" as="t" hint-placeholder-count="3">
+            <div style="padding:28px 24px 28px 0; border-right:1px solid var(--fbr-line); position:relative; padding-left:24px;">
+              <div style="font-family:var(--font-title); font-weight:700; font-size:30px; color:{{ t.dotColor }}; line-height:1; letter-spacing:-0.02em; margin-bottom:10px;">{{ t.year }}</div>
+              <div style="font-family:var(--font-title); font-weight:700; font-size:15px; color:var(--fbr-navy); margin-bottom:8px;">{{ t.title }}</div>
+              <p style="font-family:var(--font-text); font-size:14px; line-height:1.65; color:var(--text-body); margin:0;">{{ t.desc }}</p>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ④ CRESCITA — fascia navy -->
+  <section style="background:var(--fbr-navy); padding:96px 24px;">
+    <div style="max-width:1180px; margin:0 auto;">
+      <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:40px; margin-bottom:56px; flex-wrap:wrap;">
+        <div>
+          <div style="display:inline-flex; align-items:center; gap:9px; font-family:var(--font-title); font-weight:700; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:var(--fbr-teal); margin-bottom:16px;"><span style="width:7px; height:7px; border-radius:50%; background:var(--fbr-pink);"></span>La nostra crescita</div>
+          <h2 style="font-family:var(--font-display); font-weight:700; font-size:40px; line-height:1.06; letter-spacing:-0.02em; color:#fff; margin:0;">Una crescita <span style="color:var(--fbr-teal);">costante</span></h2>
+        </div>
+        <p style="font-family:var(--font-text); font-size:16px; line-height:1.6; color:rgba(255,255,255,0.7); margin:0; max-width:380px;">Dal primo progetto pilota a una struttura che muove €17M di fatturato. Una traiettoria costante, costruita sulla fiducia dei clienti.</p>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:0; border-top:1px solid rgba(255,255,255,0.14);">
+        <sc-for list="{{ crescita }}" as="c" hint-placeholder-count="3">
+          <div style="padding:44px 36px; border-right:1px solid rgba(255,255,255,0.14);">
+            <div style="font-family:var(--font-title); font-weight:700; font-size:13px; letter-spacing:0.1em; text-transform:uppercase; color:var(--fbr-teal); margin-bottom:16px;">{{ c.year }}</div>
+            <div style="font-family:var(--font-title); font-weight:300; font-size:52px; line-height:1; color:#fff; margin-bottom:8px;">{{ c.value }}</div>
+            <div style="font-family:var(--font-title); font-weight:300; font-size:18px; color:var(--fbr-teal); margin-bottom:12px;">{{ c.risorse }}</div>
+            <div style="font-family:var(--font-text); font-size:14px; color:rgba(255,255,255,0.55); line-height:1.5;">{{ c.label }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- ⑤ VALORI — sticky sidebar + index list -->
+  <section style="padding:116px 24px;">
+    <div style="max-width:1180px; margin:0 auto; display:grid; grid-template-columns:0.7fr 1.3fr; gap:80px; align-items:start;">
+      <div style="position:sticky; top:120px;">
+        <div style="display:inline-flex; align-items:center; gap:9px; font-family:var(--font-title); font-weight:700; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:var(--fbr-teal); margin-bottom:18px;"><span style="width:7px; height:7px; border-radius:50%; background:var(--fbr-pink);"></span>I nostri valori</div>
+        <h2 style="font-family:var(--font-display); font-weight:700; font-size:44px; line-height:1.06; letter-spacing:-0.02em; color:var(--fbr-navy); margin:0 0 20px;">Cosa ci <span style="color:var(--fbr-teal);">guida</span></h2>
+        <p style="font-family:var(--font-text); font-size:16px; line-height:1.65; color:var(--text-body); margin:0;">Cinque principi che definiscono come lavoriamo, selezioniamo il team e costruiamo le relazioni con i clienti.</p>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:0; border-top:1px solid var(--fbr-line);">
+        <sc-for list="{{ valori }}" as="v" hint-placeholder-count="5">
+          <div style="display:grid; grid-template-columns:56px 1fr; gap:28px; align-items:start; padding:36px 0; border-bottom:1px solid var(--fbr-line);">
+            <div style="font-family:var(--font-title); font-weight:700; font-size:52px; line-height:1; color:{{ v.color }}; opacity:0.22; letter-spacing:-0.03em; margin-top:-4px;">{{ v.n }}</div>
+            <div>
+              <h3 style="font-family:var(--font-title); font-weight:700; font-size:20px; color:var(--fbr-navy); margin:0 0 10px;">{{ v.title }}</h3>
+              <p style="font-family:var(--font-text); font-size:15.5px; line-height:1.65; color:var(--text-body); margin:0;">{{ v.desc }}</p>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- ⑥ PRESENZA — Albania hub + 4 presidi -->
+  <section style="background:var(--fbr-paper); padding:116px 24px;">
+    <div style="max-width:1180px; margin:0 auto;">
+      <div style="text-align:center; max-width:700px; margin:0 auto 52px;">
+        <div style="display:inline-flex; align-items:center; gap:9px; font-family:var(--font-title); font-weight:700; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:var(--fbr-teal); margin-bottom:18px;"><span style="width:7px; height:7px; border-radius:50%; background:var(--fbr-pink);"></span>La nostra presenza</div>
+        <h2 style="font-family:var(--font-display); font-weight:700; font-size:40px; line-height:1.08; letter-spacing:-0.02em; color:var(--fbr-navy); margin:0 0 16px;">Un modello di delivery a <span style="color:var(--fbr-teal);">governance europea</span></h2>
+        <p style="font-family:var(--font-text); font-size:17px; line-height:1.65; color:var(--text-body); margin:0 0 28px;">Combiniamo una struttura nearshore europea con capability offshore: l'equilibrio ottimale tra prossimità, controllo ed efficienza operativa.</p>
+        <!-- Model signal tags -->
+        <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:9px;">
+          <sc-for list="{{ presenzaTags }}" as="tag" hint-placeholder-count="6">
+            <span style="font-family:var(--font-text); font-weight:500; font-size:13px; color:var(--fbr-navy); background:#fff; border:1px solid var(--fbr-line); border-radius:40px; padding:8px 16px;">{{ tag }}</span>
+          </sc-for>
+        </div>
+      </div>
+
+      <!-- Albania HUB — evidenziato -->
+      <div style="background:var(--fbr-navy); border-radius:24px; padding:48px 52px; margin-bottom:20px; display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center; position:relative; overflow:hidden;">
+        <div style="position:absolute; right:-20px; top:-30px; font-family:var(--font-title); font-weight:700; font-size:180px; line-height:1; color:#fff; opacity:0.04; user-select:none; pointer-events:none;">AL</div>
+        <div>
+          <div style="display:inline-flex; align-items:center; gap:8px; background:var(--fbr-teal); color:var(--fbr-navy); font-family:var(--font-title); font-weight:700; font-size:11px; letter-spacing:0.1em; padding:7px 14px; border-radius:20px; margin-bottom:20px;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg> HEADQUARTERS</div>
+          <h3 style="font-family:var(--font-title); font-weight:700; font-size:38px; line-height:1.05; letter-spacing:-0.02em; color:#fff; margin:0 0 14px;">Albania</h3>
+          <p style="font-family:var(--font-text); font-size:16px; line-height:1.65; color:rgba(255,255,255,0.78); margin:0;">Cuore operativo del gruppo: 5 sedi tra Tirana ed Elbasan (HQ a Tirana), workforce multilingua e operatività 24/7. Qui ha sede anche il management operativo.</p>
+        </div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+          <div style="background:rgba(255,255,255,0.08); border-radius:16px; padding:24px; text-align:center;">
+            <div style="font-family:var(--font-title); font-weight:300; font-size:40px; color:var(--fbr-teal); line-height:1; margin-bottom:8px;">5</div>
+            <div style="font-family:var(--font-text); font-size:13px; color:rgba(255,255,255,0.65);">sedi operative</div>
+          </div>
+          <div style="background:rgba(255,255,255,0.08); border-radius:16px; padding:24px; text-align:center;">
+            <div style="font-family:var(--font-title); font-weight:300; font-size:40px; color:var(--fbr-teal); line-height:1; margin-bottom:8px;">+1.000</div>
+            <div style="font-family:var(--font-text); font-size:13px; color:rgba(255,255,255,0.65);">workstation attive</div>
+          </div>
+          <div style="background:rgba(255,255,255,0.08); border-radius:16px; padding:24px; text-align:center; grid-column:1/-1;">
+            <div style="font-family:var(--font-title); font-weight:300; font-size:40px; color:var(--fbr-teal); line-height:1; margin-bottom:8px;">24/7</div>
+            <div style="font-family:var(--font-text); font-size:13px; color:rgba(255,255,255,0.65);">copertura operativa</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 presidi secondari -->
+      <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-bottom:36px;">
+        <sc-for list="{{ presidi }}" as="s" hint-placeholder-count="4">
+          <div style="background:#fff; border:1px solid var(--fbr-line); border-radius:18px; padding:28px; position:relative; overflow:hidden;">
+            <div style="position:absolute; top:0; left:0; right:0; height:3px; background:{{ s.accent }};"></div>
+            <div style="font-family:var(--font-title); font-weight:700; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:{{ s.accent }}; margin-bottom:12px;">{{ s.tag }}</div>
+            <h3 style="font-family:var(--font-title); font-weight:700; font-size:18px; color:var(--fbr-navy); margin:0 0 4px;">{{ s.city }}</h3>
+            <div style="font-family:var(--font-text); font-size:13px; color:var(--text-muted); margin-bottom:12px;">{{ s.country }}</div>
+            <p style="font-family:var(--font-text); font-size:14px; line-height:1.6; color:var(--text-body); margin:0;">{{ s.desc }}</p>
+          </div>
+        </sc-for>
+      </div>
+
+      <!-- Closing text -->
+      <div style="background:#fff; border:1px solid var(--fbr-line); border-radius:18px; padding:32px 36px;">
+        <p style="font-family:var(--font-text); font-size:16px; line-height:1.7; color:var(--text-body); margin:0;">Un ecosistema distribuito tra Albania, Italia, Kosovo e UK, integrato dall'offshore, garantisce <strong style="color:var(--fbr-navy);">ridondanza operativa, continuità dei servizi e massima flessibilità</strong> nella gestione dei volumi — un modello solido e scalabile, pensato per progetti complessi in contesti internazionali.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ⑦ TECNOLOGIA -->
+  <section style="padding:116px 24px;">
+    <div style="max-width:1180px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:100px; align-items:center;">
+      <div>
+        <div style="display:inline-flex; align-items:center; gap:9px; font-family:var(--font-title); font-weight:700; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:var(--fbr-teal); margin-bottom:18px;"><span style="width:7px; height:7px; border-radius:50%; background:var(--fbr-pink);"></span>Tecnologia</div>
+        <h2 style="font-family:var(--font-display); font-weight:700; font-size:40px; line-height:1.08; letter-spacing:-0.02em; color:var(--fbr-navy); margin:0 0 22px;">Tecnologia che <span style="color:var(--fbr-teal);">amplifica</span> la capacità operativa</h2>
+        <p style="font-family:var(--font-text); font-size:17px; line-height:1.7; color:var(--text-body); margin:0 0 18px;">Automazione dei processi, monitoraggio in tempo reale e integrazione con i sistemi del cliente, per una scalabilità senza crescita lineare dei costi.</p>
+        <p style="font-family:var(--font-text); font-size:17px; line-height:1.7; color:var(--text-body); margin:0;">La tecnologia non sostituisce le persone: ne moltiplica la capacità.</p>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:14px;">
+        <sc-for list="{{ tech }}" as="t" hint-placeholder-count="4">
+          <div style="display:flex; align-items:center; gap:18px; background:var(--fbr-paper); border:1px solid var(--fbr-line); border-radius:14px; padding:20px 24px; transition:border-color .2s;" style-hover="border-color:var(--fbr-teal);">
+            <div style="width:44px; height:44px; border-radius:12px; background:#fff; border:1px solid var(--fbr-line); display:flex; align-items:center; justify-content:center; color:var(--fbr-navy); flex:none;">{{ t.icon }}</div>
+            <div>
+              <div style="font-family:var(--font-title); font-weight:700; font-size:16px; color:var(--fbr-navy); margin-bottom:3px;">{{ t.title }}</div>
+              <div style="font-family:var(--font-text); font-size:14px; color:var(--text-muted);">{{ t.desc }}</div>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- ⑧ LEADERSHIP — persone, tono umano/caldo -->
+  <section style="background:var(--fbr-paper); padding:116px 24px;">
+    <div style="max-width:1180px; margin:0 auto;">
+      <div style="max-width:680px; margin-bottom:60px;">
+        <div style="display:inline-flex; align-items:center; gap:9px; font-family:var(--font-title); font-weight:700; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:var(--fbr-teal); margin-bottom:18px;"><span style="width:7px; height:7px; border-radius:50%; background:var(--fbr-pink);"></span>Leadership</div>
+        <h2 style="font-family:var(--font-display); font-weight:700; font-size:40px; line-height:1.08; letter-spacing:-0.02em; color:var(--fbr-navy); margin:0 0 16px;">Founder in Italia, <span style="color:var(--fbr-teal);">management a Tirana</span></h2>
+        <p style="font-family:var(--font-text); font-size:17px; line-height:1.65; color:var(--text-body); margin:0;">I tre founder guidano la strategia del gruppo dall'Italia, mentre il management operativo ha sede a Tirana, nel cuore della delivery.</p>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:20px;">
+        <sc-for list="{{ leadership }}" as="p" hint-placeholder-count="3">
+          <div style="background:#fff; border:1px solid var(--fbr-line); border-radius:22px; padding:36px; display:flex; flex-direction:column; gap:20px; transition:box-shadow .22s;" style-hover="box-shadow:0 16px 40px rgba(0,46,93,0.10);">
+            <!-- Monogram avatar -->
+            <div style="width:60px; height:60px; border-radius:18px; background:{{ p.avatarBg }}; display:flex; align-items:center; justify-content:center; font-family:var(--font-title); font-weight:700; font-size:22px; color:{{ p.avatarColor }}; letter-spacing:-0.02em; flex:none;">{{ p.initials }}</div>
+            <div>
+              <div style="font-family:var(--font-title); font-weight:700; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:{{ p.roleColor }}; margin-bottom:8px;">{{ p.role }}</div>
+              <h3 style="font-family:var(--font-title); font-weight:700; font-size:21px; color:var(--fbr-navy); margin:0 0 14px;">{{ p.name }}</h3>
+              <p style="font-family:var(--font-text); font-size:15px; line-height:1.65; color:var(--text-body); margin:0;">{{ p.bio }}</p>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- ⑨ GOVERNANCE — istituzionale, tono formale/documentale -->
+  <section style="padding:116px 24px; border-top:1px solid var(--fbr-line);">
+    <div style="max-width:1180px; margin:0 auto;">
+      <div style="display:grid; grid-template-columns:0.85fr 1.15fr; gap:80px; align-items:center;">
+        <div>
+          <div style="display:inline-flex; align-items:center; gap:9px; font-family:var(--font-title); font-weight:700; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:var(--fbr-navy-50); margin-bottom:18px;"><span style="width:7px; height:7px; border-radius:50%; background:var(--fbr-navy-35);"></span>Governance &amp; Compliance</div>
+          <h2 style="font-family:var(--font-display); font-weight:700; font-size:40px; line-height:1.08; letter-spacing:-0.02em; color:var(--fbr-navy); margin:0 0 18px;">Una struttura <span style="color:var(--fbr-navy);">conforme</span> e <span style="color:var(--fbr-teal);">trasparente</span></h2>
+          <p style="font-family:var(--font-text); font-size:17px; line-height:1.7; color:var(--text-body); margin:0;">Una governance societaria allineata alle best practice internazionali e un ampio portfolio di certificazioni su sicurezza, qualità, sostenibilità ed etica.</p>
+        </div>
+        <!-- Document-style links -->
+        <div style="display:flex; flex-direction:column; gap:14px;">
+          <a href="#" style="display:flex; align-items:center; justify-content:space-between; gap:20px; background:var(--fbr-paper); border:1px solid var(--fbr-line); border-radius:16px; padding:22px 26px; text-decoration:none; transition:all .22s;" style-hover="border-color:var(--fbr-navy); background:#fff;">
+            <div style="display:flex; align-items:center; gap:16px;">
+              <div style="width:44px; height:44px; border-radius:12px; background:#fff; border:1px solid var(--fbr-line); display:flex; align-items:center; justify-content:center; flex:none;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--fbr-navy)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+              </div>
+              <div>
+                <div style="font-family:var(--font-title); font-weight:700; font-size:16px; color:var(--fbr-navy);">Struttura di Governance</div>
+                <div style="font-family:var(--font-text); font-size:13px; color:var(--text-muted);">Organi societari, struttura del gruppo</div>
+              </div>
+            </div>
+            <span style="font-size:18px; color:var(--fbr-navy-35);">→</span>
+          </a>
+          <a href="#" style="display:flex; align-items:center; justify-content:space-between; gap:20px; background:var(--fbr-paper); border:1px solid var(--fbr-line); border-radius:16px; padding:22px 26px; text-decoration:none; transition:all .22s;" style-hover="border-color:var(--fbr-navy); background:#fff;">
+            <div style="display:flex; align-items:center; gap:16px;">
+              <div style="width:44px; height:44px; border-radius:12px; background:#fff; border:1px solid var(--fbr-line); display:flex; align-items:center; justify-content:center; flex:none;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--fbr-navy)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"></circle><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"></path></svg>
+              </div>
+              <div>
+                <div style="font-family:var(--font-title); font-weight:700; font-size:16px; color:var(--fbr-navy);">Certificazioni</div>
+                <div style="font-family:var(--font-text); font-size:13px; color:var(--text-muted);">ISO, sicurezza, qualità, sostenibilità</div>
+              </div>
+            </div>
+            <span style="font-size:18px; color:var(--fbr-navy-35);">→</span>
+          </a>
+          <a href="#" style="display:flex; align-items:center; justify-content:space-between; gap:20px; background:var(--fbr-paper); border:1px solid var(--fbr-line); border-radius:16px; padding:22px 26px; text-decoration:none; transition:all .22s;" style-hover="border-color:var(--fbr-navy); background:#fff;">
+            <div style="display:flex; align-items:center; gap:16px;">
+              <div style="width:44px; height:44px; border-radius:12px; background:#fff; border:1px solid var(--fbr-line); display:flex; align-items:center; justify-content:center; flex:none;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--fbr-navy)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              </div>
+              <div>
+                <div style="font-family:var(--font-title); font-weight:700; font-size:16px; color:var(--fbr-navy);">Whistleblowing</div>
+                <div style="font-family:var(--font-text); font-size:13px; color:var(--text-muted);">Canale di segnalazione riservato</div>
+              </div>
+            </div>
+            <span style="font-size:18px; color:var(--fbr-navy-35);">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ⑩ CTA DUALE -->
+  <section style="background:var(--fbr-paper); padding:96px 24px;">
+    <div style="max-width:1180px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:24px;">
+      <div style="background:var(--fbr-navy); border-radius:24px; padding:56px 48px; position:relative; overflow:hidden;">
+        <div style="position:absolute; bottom:-40px; right:-20px; font-family:var(--font-title); font-weight:700; font-size:160px; line-height:1; color:#fff; opacity:0.04; pointer-events:none; user-select:none;">JOB</div>
+        <div style="display:inline-flex; align-items:center; gap:9px; font-family:var(--font-title); font-weight:700; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:var(--fbr-teal); margin-bottom:20px;"><span style="width:7px; height:7px; border-radius:50%; background:var(--fbr-pink);"></span>Careers</div>
+        <h2 style="font-family:var(--font-display); font-weight:700; font-size:34px; line-height:1.1; letter-spacing:-0.02em; color:#fff; margin:0 0 16px;">Costruiamo insieme il prossimo capitolo</h2>
+        <p style="font-family:var(--font-text); font-size:16px; line-height:1.65; color:rgba(255,255,255,0.75); margin:0 0 32px;">Se credi che le persone siano il vero differenziale competitivo, potresti essere la persona giusta per noi.</p>
+        <a href="#" style="display:inline-flex; align-items:center; gap:9px; font-family:var(--font-text); font-weight:700; font-size:14px; color:var(--fbr-navy); background:var(--fbr-teal); padding:14px 24px; border-radius:12px; text-decoration:none; transition:all .2s;" style-hover="background:#1ab5b5; transform:translateY(-2px);">Esplora le posizioni aperte →</a>
+      </div>
+      <div style="background:linear-gradient(135deg, var(--fbr-teal-15) 0%, #ffffff 46%, var(--fbr-pink-15) 100%); border:1px solid var(--fbr-line); border-radius:24px; padding:56px 48px; position:relative; overflow:hidden;">
+        <div style="position:absolute; bottom:-40px; right:-20px; font-family:var(--font-title); font-weight:700; font-size:160px; line-height:1; color:var(--fbr-navy); opacity:0.04; pointer-events:none; user-select:none;">BPO</div>
+        <div style="display:inline-flex; align-items:center; gap:9px; font-family:var(--font-title); font-weight:700; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:var(--fbr-pink); margin-bottom:20px;"><span style="width:7px; height:7px; border-radius:50%; background:var(--fbr-teal);"></span>Try &amp; Buy</div>
+        <h2 style="font-family:var(--font-display); font-weight:700; font-size:34px; line-height:1.1; letter-spacing:-0.02em; color:var(--fbr-navy); margin:0 0 16px;">Inizia con un pilota. Scala con fiducia.</h2>
+        <p style="font-family:var(--font-text); font-size:16px; line-height:1.65; color:var(--text-body); margin:0 0 32px;">Testa il servizio fino a 3 mesi prima di sceglierci come partner. Senza rischi, con un team già operativo.</p>
+        <a href="#" style="display:inline-flex; align-items:center; gap:9px; font-family:var(--font-text); font-weight:700; font-size:14px; color:#fff; background:var(--fbr-navy); padding:14px 24px; border-radius:12px; text-decoration:none; transition:all .2s; box-shadow:0 10px 26px rgba(0,46,93,0.18);" style-hover="background:var(--fbr-black); transform:translateY(-2px);">Parliamo del tuo progetto →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background:linear-gradient(180deg, #00386f, var(--fbr-navy)); padding:0 24px 36px; border-radius:32px 32px 0 0;">
+    <div style="max-width:1240px; margin:0 auto;">
+      <!-- Newsletter -->
+      <div style="display:flex; align-items:center; justify-content:space-between; gap:32px; padding:44px 0; border-bottom:1px solid rgba(255,255,255,0.14); flex-wrap:wrap;">
+        <div>
+          <div style="font-family:var(--font-title); font-weight:700; font-size:16px; color:#fff; margin-bottom:6px;">Iscriviti alla newsletter</div>
+          <div style="font-family:var(--font-text); font-size:14px; color:rgba(255,255,255,0.62);">Aggiornamenti BPO, casi studio e risorse per i decision maker.</div>
+        </div>
+        <div style="display:flex; flex:none;">
+          <input type="email" placeholder="La tua email" style="font-family:var(--font-text); font-size:14px; padding:13px 18px; border:1px solid rgba(255,255,255,0.2); border-right:none; border-radius:12px 0 0 12px; background:rgba(255,255,255,0.08); color:#fff; outline:none; width:270px;">
+          <button style="font-family:var(--font-text); font-weight:700; font-size:13.5px; color:var(--fbr-navy); background:var(--fbr-teal); padding:13px 22px; border:none; border-radius:0 12px 12px 0; cursor:pointer; white-space:nowrap;">Iscriviti →</button>
+        </div>
+      </div>
+      <!-- Main columns -->
+      <div style="display:grid; grid-template-columns:1.3fr 1fr 1fr 1fr 1fr; gap:36px; padding:48px 0; border-bottom:1px solid rgba(255,255,255,0.14);">
+        <div>
+          <img src="assets/logos/WAF_vert_trasp_payoff.png" alt="We Are Fiber" style="height: 160px; width: auto; margin-bottom: 40px; display: block">
+          <div style="display:flex; gap:10px;">
+            <a href="#" style="display:flex; align-items:center; justify-content:center; width:36px; height:36px; border-radius:9px; background:rgba(255,255,255,0.1); color:#fff; text-decoration:none; transition:background .2s;" style-hover="background:rgba(255,255,255,0.22);"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+            <a href="#" style="display:flex; align-items:center; justify-content:center; width:36px; height:36px; border-radius:9px; background:rgba(255,255,255,0.1); color:#fff; text-decoration:none; transition:background .2s;" style-hover="background:rgba(255,255,255,0.22);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+            <a href="#" style="display:flex; align-items:center; justify-content:center; width:36px; height:36px; border-radius:9px; background:rgba(255,255,255,0.1); color:#fff; text-decoration:none; transition:background .2s;" style-hover="background:rgba(255,255,255,0.22);"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+            <a href="#" style="display:flex; align-items:center; justify-content:center; width:36px; height:36px; border-radius:9px; background:rgba(255,255,255,0.1); color:#fff; text-decoration:none; transition:background .2s;" style-hover="background:rgba(255,255,255,0.22);"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.3 6.3 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.19 8.19 0 0 0 4.79 1.53V6.76a4.85 4.85 0 0 1-1.02-.07z"></path></svg></a>
+          </div>
+        </div>
+        <div>
+          <div style="font-family:var(--font-title); font-weight:700; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--fbr-teal); margin-bottom:16px;">Servizi</div>
+          <div style="display:flex; flex-direction:column; gap:11px;">
+            <a href="#" class="waf-link" style="font-family:var(--font-text); font-size:14px; color:rgba(255,255,255,0.72); text-decoration:none;">Customer Service</a>
+            <a href="#" class="waf-link" style="font-family:var(--font-text); font-size:14px; color:rgba(255,255,255,0.72); text-decoration:none;">Back Office</a>
+            <a href="#" class="waf-link" style="font-family:var(--font-text); font-size:14px; color:rgba(255,255,255,0.72); text-decoration:none;">Process Management</a>
+            <a href="#" class="waf-link" style="font-family:var(--font-text); font-size:14px; color:rgba(255,255,255,0.72); text-decoration:none;">Outbound Marketing</a>
+          </div>
+        </div>
+        <div>
+          <div style="font-family:var(--font-title); font-weight:700; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--fbr-teal); margin-bottom:16px;">Settori</div>
+          <div style="display:flex; flex-direction:column; gap:11px;">
+            <a href="#" class="waf-link" style="font-family:var(--font-text); font-size:14px; color:rgba(255,255,255,0.72); text-decoration:none;">Healthcare</a>
+            <a href="#" class="waf-link" style="font-family:var(--font-text); font-size:14px; color:rgba(255,255,255,0.72); text-decoration:none;">E-commerce</a>
+            <a href="#" class="waf-link" style="font-family:var(--font-text); font-size:14px; color:rgba(255,255,255,0.72); text-decoration:none;">Food Delivery</a>
+            <a href="#" class="waf-link" style="font-family:var(--font-text); font-size:14px; color:rgba(255,255,255,0.72); text-decoration:none;">Retail</a>
+            <a href="#" class="waf-link" style="font-family:var(--font-text); font-size:14px; color:rgba(255,255,255,0.72); text-decoration:none;">Finance &amp; Insurance</a>
+            <a href="#" class="waf-link" style="font-family:var(--font-text); font-size:14px; color:rgba(255,255,255,0.72); text-decoration:none;">Mobility</a>
+            <a href="#" class="waf-link" style="font-family:var(--font-text); font-size:14px; color:rgba(255,255,255,0.72); text-decoration:none;">Travel</a>
+            <a href="#" class="waf-link" style="font-family:var(--font-text); font-size:14px; color:rgba(255,255,255,0.72); text-decoration:none;">B2B Services</a>
+          </div>
+        </div>
+        <div>
+          <div style="font-family:var(--font-title); font-weight:700; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--fbr-teal); margin-bottom:16px;">Azienda</div>
+          <div style="display:flex; flex-direction:column; gap:11px;">
+            <a href="#" class="waf-link" style="font-family:var(--font-text); font-size:14px; color:rgba(255,255,255,0.72); text-decoration:none;">Chi siamo</a>
+            <a href="#" class="waf-link" style="font-family:var(--font-text); font-size:14px; color:rgba(255,255,255,0.72); text-decoration:none;">Governance</a>
+            <a href="#" class="waf-link" style="font-family:var(--font-text); font-size:14px; color:rgba(255,255,255,0.72); text-decoration:none;">Certificazioni</a>
+            <a href="#" class="waf-link" style="font-family:var(--font-text); font-size:14px; color:rgba(255,255,255,0.72); text-decoration:none;">Careers</a>
+            <a href="#" class="waf-link" style="font-family:var(--font-text); font-size:14px; color:rgba(255,255,255,0.72); text-decoration:none;">Contatti</a>
+          </div>
+        </div>
+        <div>
+          <div style="font-family:var(--font-title); font-weight:700; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--fbr-teal); margin-bottom:16px;">Blog</div>
+          <div style="display:flex; flex-direction:column; gap:11px;">
+            <a href="#" class="waf-link" style="font-family:var(--font-text); font-size:14px; color:rgba(255,255,255,0.72); text-decoration:none;">Tutti gli articoli</a>
+            <a href="#" class="waf-link" style="font-family:var(--font-text); font-size:14px; color:rgba(255,255,255,0.72); text-decoration:none;">Customer Experience</a>
+            <a href="#" class="waf-link" style="font-family:var(--font-text); font-size:14px; color:rgba(255,255,255,0.72); text-decoration:none;">BPO &amp; Operations</a>
+            <a href="#" class="waf-link" style="font-family:var(--font-text); font-size:14px; color:rgba(255,255,255,0.72); text-decoration:none;">Social Responsibility</a>
+          </div>
+        </div>
+      </div>
+      <!-- Bottom bar -->
+      <div style="display:flex; align-items:center; justify-content:space-between; padding-top:22px; flex-wrap:wrap; gap:12px;">
+        <span style="font-family:var(--font-text); font-size:13px; color:rgba(255,255,255,0.45);">© 2026&nbsp;<span style="font-family: Inter, system-ui, -apple-system, sans-serif; font-size: 12.5px;">Fiber Group Sh.p.k.&nbsp;|&nbsp;</span>We Are Fiber — Outsource. Human force.</span>
+        <span style="font-family:var(--font-text); font-size:13px; color:rgba(255,255,255,0.45);">Privacy · Cookie · Whistleblowing</span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { menuServ: false, menuAz: false };
+
+  renderVals() {
+    return {
+      menuServ: this.state.menuServ,
+      menuAz:   this.state.menuAz,
+      openServ:  () => this.setState({ menuServ: true }),
+      closeServ: () => this.setState({ menuServ: false }),
+      openAz:    () => this.setState({ menuAz: true }),
+      closeAz:   () => this.setState({ menuAz: false }),
+      servCaret: this.state.menuServ ? "rotate(180deg)" : "rotate(0deg)",
+
+      numeri: [
+        { v: "~83", unit: "%", bg: "83", label: "con laurea di I livello" },
+        { v: "~40", unit: "%", bg: "40", label: "inglese di livello B2" },
+        { v: "28",  unit: "",  bg: "28", label: "anni di età media" },
+        { v: "+6",  unit: "",  bg: "6",  label: "lingue principali gestite" }
+      ],
+
+      timeline: [
+        {
+          year: "2006",
+          dotColor: "var(--fbr-teal)",
+          title: "Le origini",
+          desc: "Daniele Volpe e Francesco Marotta fondano We Are Fiber a Tirana. Nasce il modello Smartsourcing: un team dedicato che diventa un'estensione della tua azienda."
+        },
+        {
+          year: "2017",
+          dotColor: "var(--fbr-pink)",
+          title: "La crescita",
+          desc: "Oltre 700 risorse operative, fatturato a €7M. Il modello si consolida: team dedicati, SLA garantiti, formazione continua. Prime partnership con brand europei."
+        },
+        {
+          year: "2025",
+          dotColor: "var(--fbr-navy)",
+          title: "Il presente",
+          desc: "Oltre 1.300 risorse, €17M di fatturato. Pristina apre il mercato DACH. We Are Fiber è il partner BPO di riferimento per aziende che crescono in Europa."
+        }
+      ],
+
+      crescita: [
+        { year: "2010",  value: "€1,4M",  risorse: "+100 risorse",   label: "Primo consolidamento. Base operativa a Tirana." },
+        { year: "2017",  value: "€7M",    risorse: "+700 risorse",   label: "Espansione europea, prime partnership di scala." },
+        { year: "2025",  value: "€17M",   risorse: "+1.300 risorse", label: "Quattro paesi, governance europea." }
+      ],
+
+      valori: [
+        { n: "01", color: "var(--fbr-teal)",  title: "Operational Flexibility",  desc: "Modelli di delivery che si adattano in fretta alle variazioni di volume: attiviamo nuovi team rapidamente e gestiamo picchi imprevisti senza perdere qualità." },
+        { n: "02", color: "var(--fbr-pink)",   title: "Process Efficiency",       desc: "Produttività e qualità grazie a tecnologie evolute e automazione intelligente dei processi. La tecnologia non sostituisce le persone: ne moltiplica la capacità." },
+        { n: "03", color: "var(--fbr-teal)",  title: "Customer Centricity",      desc: "Persone e organizzazione allineate agli obiettivi del partner, con governance multilivello. I nostri clienti sanno sempre cosa succede, in tempo reale." },
+        { n: "04", color: "var(--fbr-pink)",   title: "Sustainability",           desc: "Crescita responsabile, valorizzazione delle persone, riduzione dell'impatto ambientale. Ogni decisione tiene conto del lungo periodo." },
+        { n: "05", color: "var(--fbr-navy)",  title: "Social Responsibility",    desc: "Standard etici e normativi elevati, trasparenza e tutela dei dipendenti. Una governance societaria allineata alle best practice internazionali." }
+      ],
+
+      presenzaTags: [
+        "Delivery nearshore",
+        "Governance diretta & audit on-site",
+        "Euro time zone",
+        "Copertura multilingue europea",
+        "24/7",
+        "Capability offshore"
+      ],
+
+      presidi: [
+        { tag: "XK · New delivery site", accent: "var(--fbr-pink)",  city: "Kosovo",         country: "Pristina",  desc: "+200 workstation. Talent pool dedicato ai programmi DACH: tedesco e inglese." },
+        { tag: "IT · Commerciale",       accent: "var(--fbr-navy)",  city: "Italia",         country: "Napoli",    desc: "+50 workstation. Presidio commerciale e coordinamento sul mercato italiano." },
+        { tag: "UK · Commerciale",       accent: "var(--fbr-navy)",  city: "United Kingdom", country: "Londra",    desc: "Ufficio commerciale per i mercati internazionali e i clienti di lingua inglese." },
+        { tag: "Offshore · Capability",  accent: "var(--fbr-teal)", city: "Offshore",       country: "Integrato", desc: "Flessibilità e ottimizzazione dei costi per i progetti che lo richiedono." }
+      ],
+
+      leadership: [
+        {
+          initials: "DV",
+          avatarBg: "var(--fbr-teal-15)",
+          avatarColor: "var(--fbr-navy)",
+          roleColor: "var(--fbr-teal)",
+          role: "Fondatore",
+          name: "Daniele Volpe",
+          bio: "Ha fondato We Are Fiber nel 2006, guidandone la crescita da startup a gruppo internazionale con presenza in quattro paesi."
+        },
+        {
+          initials: "FM",
+          avatarBg: "var(--fbr-pink-15)",
+          avatarColor: "var(--fbr-navy)",
+          roleColor: "var(--fbr-pink)",
+          role: "Co-fondatore · Finance & Legal Director",
+          name: "Francesco Marotta",
+          bio: "Co-fondatore nel 2006, supervisiona finanza e procedure legali con presidio costante in materia GDPR e compliance europea."
+        },
+        {
+          initials: "AC",
+          avatarBg: "var(--fbr-teal-15)",
+          avatarColor: "var(--fbr-navy)",
+          roleColor: "var(--fbr-navy-50)",
+          role: "Socio · Head of Strategic Alliances",
+          name: "Antonio Costa",
+          bio: "Background in Accenture su project management e reingegnerizzazione dei processi; in We Are Fiber guida lo sviluppo delle alleanze strategiche."
+        }
+      ],
+
+      tech: [
+        {
+          icon: React.createElement("svg",{width:20,height:20,viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:1.6,strokeLinecap:"round",strokeLinejoin:"round"},React.createElement("path",{d:"M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"})),
+          title: "Omnichannel Ticketing",
+          desc: "Tutti i canali in un'unica coda: voce, chat, email, social, WhatsApp."
+        },
+        {
+          icon: React.createElement("svg",{width:20,height:20,viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:1.6,strokeLinecap:"round",strokeLinejoin:"round"},React.createElement("polyline",{points:"22 12 18 12 15 21 9 3 6 12 2 12"})),
+          title: "Control Room & Dashboard",
+          desc: "KPI in tempo reale, integrati con i sistemi del cliente."
+        },
+        {
+          icon: React.createElement("svg",{width:20,height:20,viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:1.6,strokeLinecap:"round",strokeLinejoin:"round"},React.createElement("rect",{x:3,y:11,width:18,height:11,rx:2}),React.createElement("path",{d:"M7 11V7a5 5 0 0 1 10 0v4"})),
+          title: "RPA & Automation",
+          desc: "Automazione dei processi ripetitivi: più velocità, meno errore umano."
+        },
+        {
+          icon: React.createElement("svg",{width:20,height:20,viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:1.6,strokeLinecap:"round",strokeLinejoin:"round"},React.createElement("path",{d:"M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"})),
+          title: "Quality Audit & CSAT",
+          desc: "Monitoraggio qualitativo su ogni interazione, report settimanali e NPS tracking."
+        }
+      ],
+
+      navServices: [
+        { title: "Customer Service", items: ["Ticket Management", "Inbound & Help Desk", "Live Chat", "Email & Social Care", "Supporto multilingua", "Technical Support"] },
+        { title: "Back Office", items: ["Data Entry", "Order Management", "Document Management", "Billing & Payments", "Reporting"] },
+        { title: "Process Management", items: ["Control Room", "Quality Audit", "RPA & Automation"] },
+        { title: "Outbound Marketing", items: ["Survey & Market Research", "Campagne Loyalty", "Lead Generation"] }
+      ],
+
+      navAzienda: ["Chi siamo", "Governance", "Certificazioni", "Contatti"]
+    };
+  }
+}
+</script>
+</body>
+</html>

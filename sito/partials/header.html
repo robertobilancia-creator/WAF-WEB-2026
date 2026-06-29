@@ -1,0 +1,101 @@
+<style>
+.waf-hd-wrap{position:sticky;top:16px;z-index:300;padding:0 24px}
+.waf-hd{position:relative;max-width:1240px;margin:16px auto 0;display:flex;align-items:center;justify-content:space-between;height:86px;padding:0 16px 0 26px;background:rgba(255,255,255,0.82);backdrop-filter:blur(14px);border:1px solid var(--fbr-line);border-radius:18px;box-shadow:0 10px 34px rgba(0,46,93,0.08);font-family:var(--font-text)}
+.waf-hd a{text-decoration:none;color:var(--fbr-navy)}
+.waf-logo img{height:45px;display:block;width:auto}
+.waf-nav{display:flex;align-items:center;gap:2px;height:86px;list-style:none;margin:0;padding:0}
+.waf-nav>li{position:relative;list-style:none;height:100%;display:flex;align-items:center}
+.waf-nav>li>a{display:flex;align-items:center;gap:5px;height:100%;font-weight:600;font-size:14.5px;padding:0 13px;color:var(--fbr-navy)}
+.waf-nav>li>a .ca{font-size:9px;color:var(--fbr-teal);transition:transform .2s}
+.waf-nav>li:hover>a{color:var(--fbr-teal)}
+.waf-nav>li:hover>a .ca{transform:rotate(180deg)}
+.waf-dd{position:absolute;top:calc(100% + 8px);left:0;background:#fff;border:1px solid var(--fbr-line);border-radius:18px;box-shadow:0 28px 70px rgba(0,46,93,0.18);padding:22px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .16s,transform .16s,visibility .16s;pointer-events:none}
+.waf-nav>li:hover .waf-dd{opacity:1;visibility:visible;transform:none;pointer-events:auto}
+/* il mega-menu si allinea alla barra (pill), non alla voce "Servizi" */
+.waf-nav>li:has(.waf-dd.mega){position:static}
+.waf-dd.mega{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;left:0;right:0;width:auto;transform:translateY(-6px)}
+.waf-nav>li:hover .waf-dd.mega{transform:none}
+.waf-ct{font-family:var(--font-title);font-weight:700;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--fbr-teal);padding-bottom:10px;margin-bottom:12px;border-bottom:1px solid var(--fbr-line);display:block}
+.waf-ct:hover{color:var(--fbr-navy)}
+.waf-dd .it{display:block;font-size:14px;color:var(--text-body);padding:6px 0;line-height:1.25}
+.waf-dd .it:hover{color:var(--fbr-pink)}
+.waf-dd.single{min-width:230px}
+.waf-dd.single .it{padding:8px 10px;border-radius:8px}
+.waf-dd.single .it:hover{background:var(--fbr-paper)}
+.waf-hd-r{display:flex;align-items:center;gap:18px}
+.waf-lang{font-family:var(--font-title);font-weight:500;font-size:12.5px;color:var(--fbr-navy-50)}.waf-lang b{color:var(--fbr-navy)}
+.waf-cta{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-text);font-weight:700;font-size:13.5px;color:#fff !important;background:var(--fbr-navy);padding:12px 20px;border-radius:12px;box-shadow:0 6px 18px rgba(0,46,93,0.18);transition:background .2s,transform .2s}
+.waf-cta:hover{background:var(--fbr-black);transform:translateY(-1px)}
+@media(max-width:1024px){.waf-nav,.waf-lang{display:none}}
+</style>
+<div class="waf-hd-wrap"><header class="waf-hd">
+  <a class="waf-logo" href="/"><img src="/assets/logos/WAF_orizz_color.png" alt="We Are Fiber"></a>
+  <ul class="waf-nav">
+    <li><a href="/servizi/">Servizi <span class="ca">▾</span></a>
+      <div class="waf-dd mega">
+        <div>
+          <a class="waf-ct" href="/servizi/customer-service/">Customer Service</a>
+          <a class="it" href="/servizi/customer-service/ticket-management/">Ticket Management</a>
+          <a class="it" href="/servizi/customer-service/digital-customer-care/">Digital Customer Care</a>
+          <a class="it" href="/servizi/customer-service/help-desk/">Help Desk</a>
+          <a class="it" href="/servizi/customer-service/chatbot/">Chatbot</a>
+          <a class="it" href="/servizi/customer-service/booking-office/">Booking Office</a>
+          <a class="it" href="/servizi/customer-service/smart-assistance/">Smart Assistance</a>
+        </div>
+        <div>
+          <a class="waf-ct" href="/servizi/back-office/">Back Office</a>
+          <a class="it" href="/servizi/back-office/data-entry/">Data Entry</a>
+          <a class="it" href="/servizi/back-office/data-enrichment/">Data Enrichment</a>
+          <a class="it" href="/servizi/back-office/gestione-documentale/">Gestione Documentale</a>
+          <a class="it" href="/servizi/back-office/gestione-logistica/">Gestione Logistica</a>
+          <a class="it" href="/servizi/back-office/gestione-ordini/">Gestione Ordini</a>
+        </div>
+        <div>
+          <a class="waf-ct" href="/servizi/process-management/">Process Management</a>
+          <a class="it" href="/servizi/process-management/control-room/">Control Room</a>
+          <a class="it" href="/servizi/process-management/quality-audit/">Quality Audit</a>
+          <a class="it" href="/servizi/process-management/robotic-process-automation/">Robotic Process Automation</a>
+        </div>
+        <div>
+          <a class="waf-ct" href="/servizi/outbound-marketing/">Outbound Marketing</a>
+          <a class="it" href="/servizi/outbound-marketing/survey-customer-satisfaction/">Survey Customer Satisfaction</a>
+          <a class="it" href="/servizi/outbound-marketing/indagini-di-mercato/">Indagini di Mercato</a>
+          <a class="it" href="/servizi/outbound-marketing/campagne-loyalty/">Campagne Loyalty</a>
+        </div>
+      </div>
+    </li>
+    <li><a href="/settori/">Settori <span class="ca">▾</span></a>
+      <div class="waf-dd single">
+        <a class="it" href="/settori/healthcare/">Healthcare</a>
+        <a class="it" href="/settori/ecommerce/">E-commerce</a>
+        <a class="it" href="/settori/food-delivery/">Food Delivery</a>
+        <a class="it" href="/settori/retail/">Retail</a>
+        <a class="it" href="/settori/finance-insurance/">Finance &amp; Insurance</a>
+        <a class="it" href="/settori/mobility/">Mobility</a>
+        <a class="it" href="/settori/travel/">Travel</a>
+        <a class="it" href="/settori/b2b-services/">B2B Services</a>
+      </div>
+    </li>
+    <li><a href="/metodo/">Metodo</a></li>
+    <li><a href="/azienda/chi-siamo/">Azienda <span class="ca">▾</span></a>
+      <div class="waf-dd single">
+        <a class="it" href="/azienda/chi-siamo/">Chi siamo</a>
+        <a class="it" href="/azienda/governance/">Governance</a>
+        <a class="it" href="/azienda/certificazioni/">Certificazioni</a>
+      </div>
+    </li>
+    <li><a href="/blog/">Blog <span class="ca">▾</span></a>
+      <div class="waf-dd single">
+        <a class="it" href="/blog/">Tutti gli articoli</a>
+        <a class="it" href="/blog/customer-experience/">Customer Experience</a>
+        <a class="it" href="/blog/bpo-operations/">BPO &amp; Operations</a>
+        <a class="it" href="/blog/social-responsibility/">Social Responsibility</a>
+      </div>
+    </li>
+    <li><a href="/careers/">Careers</a></li>
+  </ul>
+  <div class="waf-hd-r">
+    <span class="waf-lang"><b>IT</b> / EN</span>
+    <a class="waf-cta" href="/contatti/">Prenota una call</a>
+  </div>
+</header></div>

@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Customer Service in Outsourcing | We Are Fiber</title>
+<link rel="stylesheet" href="/fiber-tokens.css">
+<script>if(!matchMedia('(prefers-reduced-motion: reduce)').matches){document.documentElement.classList.add('js-reveal')}</script>
+<script src="/reveal.js" defer></script>
+</head>
+<body>
+<style>
+.waf-hd-wrap{position:sticky;top:16px;z-index:300;padding:0 24px}
+.waf-hd{position:relative;max-width:1240px;margin:16px auto 0;display:flex;align-items:center;justify-content:space-between;height:86px;padding:0 16px 0 26px;background:rgba(255,255,255,0.82);backdrop-filter:blur(14px);border:1px solid var(--fbr-line);border-radius:18px;box-shadow:0 10px 34px rgba(0,46,93,0.08);font-family:var(--font-text)}
+.waf-hd a{text-decoration:none;color:var(--fbr-navy)}
+.waf-logo img{height:45px;display:block;width:auto}
+.waf-nav{display:flex;align-items:center;gap:2px;height:86px;list-style:none;margin:0;padding:0}
+.waf-nav>li{position:relative;list-style:none;height:100%;display:flex;align-items:center}
+.waf-nav>li>a{display:flex;align-items:center;gap:5px;height:100%;font-weight:600;font-size:14.5px;padding:0 13px;color:var(--fbr-navy)}
+.waf-nav>li>a .ca{font-size:9px;color:var(--fbr-teal);transition:transform .2s}
+.waf-nav>li:hover>a{color:var(--fbr-teal)}
+.waf-nav>li:hover>a .ca{transform:rotate(180deg)}
+.waf-dd{position:absolute;top:calc(100% + 8px);left:0;background:#fff;border:1px solid var(--fbr-line);border-radius:18px;box-shadow:0 28px 70px rgba(0,46,93,0.18);padding:22px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .16s,transform .16s,visibility .16s;pointer-events:none}
+.waf-nav>li:hover .waf-dd{opacity:1;visibility:visible;transform:none;pointer-events:auto}
+/* il mega-menu si allinea alla barra (pill), non alla voce "Servizi" */
+.waf-nav>li:has(.waf-dd.mega){position:static}
+.waf-dd.mega{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;left:0;right:0;width:auto;transform:translateY(-6px)}
+.waf-nav>li:hover .waf-dd.mega{transform:none}
+.waf-ct{font-family:var(--font-title);font-weight:700;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--fbr-teal);padding-bottom:10px;margin-bottom:12px;border-bottom:1px solid var(--fbr-line);display:block}
+.waf-ct:hover{color:var(--fbr-navy)}
+.waf-dd .it{display:block;font-size:14px;color:var(--text-body);padding:6px 0;line-height:1.25}
+.waf-dd .it:hover{color:var(--fbr-pink)}
+.waf-dd.single{min-width:230px}
+.waf-dd.single .it{padding:8px 10px;border-radius:8px}
+.waf-dd.single .it:hover{background:var(--fbr-paper)}
+.waf-hd-r{display:flex;align-items:center;gap:18px}
+.waf-lang{font-family:var(--font-title);font-weight:500;font-size:12.5px;color:var(--fbr-navy-50)}.waf-lang b{color:var(--fbr-navy)}
+.waf-cta{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-text);font-weight:700;font-size:13.5px;color:#fff !important;background:var(--fbr-navy);padding:12px 20px;border-radius:12px;box-shadow:0 6px 18px rgba(0,46,93,0.18);transition:background .2s,transform .2s}
+.waf-cta:hover{background:var(--fbr-black);transform:translateY(-1px)}
+@media(max-width:1024px){.waf-nav,.waf-lang{display:none}}
+</style>
+<div class="waf-hd-wrap"><header class="waf-hd">
+  <a class="waf-logo" href="/"><img src="/assets/logos/WAF_orizz_color.png" alt="We Are Fiber"></a>
+  <ul class="waf-nav">
+    <li><a href="/servizi/">Servizi <span class="ca">▾</span></a>
+      <div class="waf-dd mega">
+        <div>
+          <a class="waf-ct" href="/servizi/customer-service/">Customer Service</a>
+          <a class="it" href="/servizi/customer-service/ticket-management/">Ticket Management</a>
+          <a class="it" href="/servizi/customer-service/digital-customer-care/">Digital Customer Care</a>
+          <a class="it" href="/servizi/customer-service/help-desk/">Help Desk</a>
+          <a class="it" href="/servizi/customer-service/chatbot/">Chatbot</a>
+          <a class="it" href="/servizi/customer-service/booking-office/">Booking Office</a>
+          <a class="it" href="/servizi/customer-service/smart-assistance/">Smart Assistance</a>
+        </div>
+        <div>
+          <a class="waf-ct" href="/servizi/back-office/">Back Office</a>
+          <a class="it" href="/servizi/back-office/data-entry/">Data Entry</a>
+          <a class="it" href="/servizi/back-office/data-enrichment/">Data Enrichment</a>
+          <a class="it" href="/servizi/back-office/gestione-documentale/">Gestione Documentale</a>
+          <a class="it" href="/servizi/back-office/gestione-logistica/">Gestione Logistica</a>
+          <a class="it" href="/servizi/back-office/gestione-ordini/">Gestione Ordini</a>
+        </div>
+        <div>
+          <a class="waf-ct" href="/servizi/process-management/">Process Management</a>
+          <a class="it" href="/servizi/process-management/control-room/">Control Room</a>
+          <a class="it" href="/servizi/process-management/quality-audit/">Quality Audit</a>
+          <a class="it" href="/servizi/process-management/robotic-process-automation/">Robotic Process Automation</a>
+        </div>
+        <div>
+          <a class="waf-ct" href="/servizi/outbound-marketing/">Outbound Marketing</a>
+          <a class="it" href="/servizi/outbound-marketing/survey-customer-satisfaction/">Survey Customer Satisfaction</a>
+          <a class="it" href="/servizi/outbound-marketing/indagini-di-mercato/">Indagini di Mercato</a>
+          <a class="it" href="/servizi/outbound-marketing/campagne-loyalty/">Campagne Loyalty</a>
+        </div>
+      </div>
+    </li>
+    <li><a href="/settori/">Settori <span class="ca">▾</span></a>
+      <div class="waf-dd single">
+        <a class="it" href="/settori/healthcare/">Healthcare</a>
+        <a class="it" href="/settori/ecommerce/">E-commerce</a>
+        <a class="it" href="/settori/food-delivery/">Food Delivery</a>
+        <a class="it" href="/settori/retail/">Retail</a>
+        <a class="it" href="/settori/finance-insurance/">Finance &amp; Insurance</a>
+        <a class="it" href="/settori/mobility/">Mobility</a>
+        <a class="it" href="/settori/travel/">Travel</a>
+        <a class="it" href="/settori/b2b-services/">B2B Services</a>
+      </div>
+    </li>
+    <li><a href="/metodo/">Metodo</a></li>
+    <li><a href="/azienda/chi-siamo/">Azienda <span class="ca">▾</span></a>
+      <div class="waf-dd single">
+        <a class="it" href="/azienda/chi-siamo/">Chi siamo</a>
+        <a class="it" href="/azienda/governance/">Governance</a>
+        <a class="it" href="/azienda/certificazioni/">Certificazioni</a>
+      </div>
+    </li>
+    <li><a href="/blog/">Blog <span class="ca">▾</span></a>
+      <div class="waf-dd single">
+        <a class="it" href="/blog/">Tutti gli articoli</a>
+        <a class="it" href="/blog/customer-experience/">Customer Experience</a>
+        <a class="it" href="/blog/bpo-operations/">BPO &amp; Operations</a>
+        <a class="it" href="/blog/social-responsibility/">Social Responsibility</a>
+      </div>
+    </li>
+    <li><a href="/careers/">Careers</a></li>
+  </ul>
+  <div class="waf-hd-r">
+    <span class="waf-lang"><b>IT</b> / EN</span>
+    <a class="waf-cta" href="/contatti/">Prenota una call</a>
+  </div>
+</header></div>
+
+<!-- ===================== HERO (layout come Chi siamo) ===================== -->
+<section style="position:relative;overflow:hidden;padding:100px 24px 96px;border-bottom:1px solid var(--fbr-line)">
+  <div style="position:absolute;bottom:-18px;right:max(24px, calc(50% - 590px));font-family:var(--font-title);font-weight:700;font-size:clamp(42px, 12vw, 150px);line-height:1;color:var(--fbr-teal);opacity:0.045;white-space:nowrap;pointer-events:none;letter-spacing:-0.04em;user-select:none">We Are Fiber</div>
+  <div class="waf-wrap" style="position:relative">
+    <div style="display:flex;align-items:center;gap:8px;font-family:var(--font-title);font-size:12px;letter-spacing:.06em;color:var(--fbr-navy-50);margin-bottom:36px">
+      <a class="waf-link" href="/" style="text-decoration:none;color:var(--fbr-navy-50)">Home</a><span>›</span>
+      <a class="waf-link" href="/servizi/" style="text-decoration:none;color:var(--fbr-navy-50)">Servizi</a><span>›</span>
+      <span style="color:var(--fbr-navy)">Customer Service</span>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end">
+      <div>
+        <div class="waf-eyebrow">Servizi</div>
+        <h1 style="font-family:var(--font-display);font-weight:700;font-size:60px;line-height:1.03;letter-spacing:-0.03em;color:var(--fbr-navy);margin:0">Customer Service<br>in <span style="color:var(--fbr-teal)">Outsourcing</span></h1>
+      </div>
+      <div style="padding-bottom:8px">
+        <p style="font-family:var(--font-text);font-size:20px;line-height:1.65;color:var(--text-body);margin:0 0 24px">La relazione con i tuoi clienti, curata su ogni canale e in ogni lingua, 24/7 — da un team dedicato che diventa <strong style="color:var(--fbr-navy);font-weight:700">un'estensione del tuo brand</strong>.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px">
+          <span class="waf-tag">Multicanale</span><span class="waf-tag">Multilingua</span><span class="waf-tag">24/7</span><span class="waf-tag">Omnichannel</span><span class="waf-tag">Team dedicato</span>
+        </div>
+        <div style="display:flex;gap:14px;flex-wrap:wrap">
+          <a class="waf-btn waf-btn--navy" href="/contatti/">Parliamo del tuo progetto →</a>
+          <a class="waf-btn waf-btn--ghost" href="/contatti/">Prenota una call</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== INTRO ===================== -->
+<section class="waf-sec">
+  <div class="waf-wrap" style="display:grid;grid-template-columns:0.9fr 1.1fr;gap:80px;align-items:center">
+    <div>
+      <div class="waf-eyebrow">Il servizio</div>
+      <h2 class="waf-h2">Ogni conversazione <span class="waf-hl">conta</span></h2>
+    </div>
+    <div>
+      <p class="waf-lead" style="margin:0">Il customer service è il volto del tuo brand: ogni risposta costruisce — o incrina — la fiducia dei clienti. Gestiamo la relazione su tutti i canali, con operatori dedicati e multilingua e procedure modellate sulle tue linee guida, perché ogni contatto sia rapido, coerente e nel tono giusto.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== LE SOLUZIONI ===================== -->
+<section class="waf-sec waf-band">
+  <div class="waf-wrap">
+    <div style="max-width:680px;margin-bottom:52px">
+      <div class="waf-eyebrow">Le soluzioni</div>
+      <h2 class="waf-h2">Sei soluzioni, <span class="waf-hl">un'unica relazione</span></h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px">
+      <a class="waf-card" href="/servizi/customer-service/ticket-management/" style="padding:32px">
+        <div class="waf-ico" style="margin-bottom:18px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m20.59 13.41-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg></div>
+        <div style="font-family:var(--font-title);font-weight:700;font-size:18px;color:var(--fbr-navy);margin-bottom:8px">Ticket Management</div>
+        <div style="font-size:14.5px;line-height:1.6;color:var(--text-body);margin-bottom:16px">Richieste da email, chat, form e telefono tracciate, smistate e risolte su un unico flusso.</div>
+        <div style="font-family:var(--font-title);font-weight:700;font-size:13px;color:var(--fbr-teal)">Scopri →</div>
+      </a>
+      <a class="waf-card" href="/servizi/customer-service/digital-customer-care/" style="padding:32px">
+        <div class="waf-ico" style="margin-bottom:18px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div>
+        <div style="font-family:var(--font-title);font-weight:700;font-size:18px;color:var(--fbr-navy);margin-bottom:8px">Digital Customer Care</div>
+        <div style="font-size:14.5px;line-height:1.6;color:var(--text-body);margin-bottom:16px">Assistenza su social, chat ed email, con il tono di voce del tuo brand.</div>
+        <div style="font-family:var(--font-title);font-weight:700;font-size:13px;color:var(--fbr-teal)">Scopri →</div>
+      </a>
+      <a class="waf-card" href="/servizi/customer-service/help-desk/" style="padding:32px">
+        <div class="waf-ico" style="margin-bottom:18px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 14v-3a9 9 0 0 1 18 0v3"/><path d="M21 16a2 2 0 0 1-2 2h-2v-6h2a2 2 0 0 1 2 2z"/><path d="M3 16a2 2 0 0 0 2 2h2v-6H5a2 2 0 0 0-2 2z"/></svg></div>
+        <div style="font-family:var(--font-title);font-weight:700;font-size:18px;color:var(--fbr-navy);margin-bottom:8px">Help Desk</div>
+        <div style="font-size:14.5px;line-height:1.6;color:var(--text-body);margin-bottom:16px">Supporto di primo e secondo livello per risolvere ogni richiesta.</div>
+        <div style="font-family:var(--font-title);font-weight:700;font-size:13px;color:var(--fbr-teal)">Scopri →</div>
+      </a>
+      <a class="waf-card" href="/servizi/customer-service/chatbot/" style="padding:32px">
+        <div class="waf-ico" style="margin-bottom:18px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/><line x1="8" y1="15.5" x2="8" y2="15.5"/><line x1="16" y1="15.5" x2="16" y2="15.5"/></svg></div>
+        <div style="font-family:var(--font-title);font-weight:700;font-size:18px;color:var(--fbr-navy);margin-bottom:8px">Chatbot</div>
+        <div style="font-size:14.5px;line-height:1.6;color:var(--text-body);margin-bottom:16px">Automazione del primo contatto, con escalation all'operatore quando serve.</div>
+        <div style="font-family:var(--font-title);font-weight:700;font-size:13px;color:var(--fbr-teal)">Scopri →</div>
+      </a>
+      <a class="waf-card" href="/servizi/customer-service/booking-office/" style="padding:32px">
+        <div class="waf-ico" style="margin-bottom:18px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+        <div style="font-family:var(--font-title);font-weight:700;font-size:18px;color:var(--fbr-navy);margin-bottom:8px">Booking Office</div>
+        <div style="font-size:14.5px;line-height:1.6;color:var(--text-body);margin-bottom:16px">Prenotazioni e gestione appuntamenti, multilingua e 24/7.</div>
+        <div style="font-family:var(--font-title);font-weight:700;font-size:13px;color:var(--fbr-teal)">Scopri →</div>
+      </a>
+      <a class="waf-card" href="/servizi/customer-service/smart-assistance/" style="padding:32px">
+        <div class="waf-ico" style="margin-bottom:18px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/></svg></div>
+        <div style="font-family:var(--font-title);font-weight:700;font-size:18px;color:var(--fbr-navy);margin-bottom:8px">Smart Assistance</div>
+        <div style="font-size:14.5px;line-height:1.6;color:var(--text-body);margin-bottom:16px">Assistenza evoluta che combina competenza umana e automazione.</div>
+        <div style="font-family:var(--font-title);font-weight:700;font-size:13px;color:var(--fbr-teal)">Scopri →</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== BENEFICI ===================== -->
+<section class="waf-sec">
+  <div class="waf-wrap">
+    <div style="max-width:640px;margin-bottom:52px">
+      <div class="waf-eyebrow">Benefici</div>
+      <h2 class="waf-h2">Perché affidarci il <span class="waf-hl">customer service</span></h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:18px">
+      <div class="waf-card" style="padding:32px">
+        <div class="waf-ico" style="margin-bottom:20px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div>
+        <h3 style="font-family:var(--font-title);font-weight:700;font-size:18px;color:var(--fbr-navy);margin:0 0 10px">Scalabilità sui picchi</h3>
+        <p style="font-size:14.5px;line-height:1.65;color:var(--text-body);margin:0">Capacità che si adatta ai volumi, senza sovradimensionare la struttura.</p>
+      </div>
+      <div class="waf-card" style="padding:32px">
+        <div class="waf-ico" style="margin-bottom:20px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+        <h3 style="font-family:var(--font-title);font-weight:700;font-size:18px;color:var(--fbr-navy);margin:0 0 10px">Copertura multilingua</h3>
+        <p style="font-size:14.5px;line-height:1.65;color:var(--text-body);margin:0">Operatori bilingua e multilingua selezionati in base al mercato di riferimento.</p>
+      </div>
+      <div class="waf-card" style="padding:32px">
+        <div class="waf-ico" style="margin-bottom:20px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+        <h3 style="font-family:var(--font-title);font-weight:700;font-size:18px;color:var(--fbr-navy);margin:0 0 10px">Esperienza coerente</h3>
+        <p style="font-size:14.5px;line-height:1.65;color:var(--text-body);margin:0">Stesso tono e stessa qualità su ogni canale, in ogni lingua.</p>
+      </div>
+      <div class="waf-card" style="padding:32px">
+        <div class="waf-ico" style="margin-bottom:20px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="5" x2="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg></div>
+        <h3 style="font-family:var(--font-title);font-weight:700;font-size:18px;color:var(--fbr-navy);margin:0 0 10px">Meno costi</h3>
+        <p style="font-size:14.5px;line-height:1.65;color:var(--text-body);margin:0">Riduzione degli oneri di reclutamento e formazione del personale di assistenza.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SETTORI ===================== -->
+<section class="waf-sec waf-band">
+  <div class="waf-wrap">
+    <div style="max-width:680px;margin-bottom:40px">
+      <div class="waf-eyebrow">Settori</div>
+      <h2 class="waf-h2">Lo applichiamo nel <span class="waf-hl">tuo settore</span></h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px">
+      <a class="waf-card" href="/settori/healthcare/" style="padding:22px 24px;display:flex;align-items:center;justify-content:space-between;gap:12px"><span style="font-family:var(--font-text);font-weight:600;font-size:16px;color:var(--fbr-navy)">Healthcare</span><span style="color:var(--fbr-teal);font-size:18px">→</span></a>
+      <a class="waf-card" href="/settori/ecommerce/" style="padding:22px 24px;display:flex;align-items:center;justify-content:space-between;gap:12px"><span style="font-family:var(--font-text);font-weight:600;font-size:16px;color:var(--fbr-navy)">E-commerce</span><span style="color:var(--fbr-teal);font-size:18px">→</span></a>
+      <a class="waf-card" href="/settori/food-delivery/" style="padding:22px 24px;display:flex;align-items:center;justify-content:space-between;gap:12px"><span style="font-family:var(--font-text);font-weight:600;font-size:16px;color:var(--fbr-navy)">Food Delivery</span><span style="color:var(--fbr-teal);font-size:18px">→</span></a>
+      <a class="waf-card" href="/settori/retail/" style="padding:22px 24px;display:flex;align-items:center;justify-content:space-between;gap:12px"><span style="font-family:var(--font-text);font-weight:600;font-size:16px;color:var(--fbr-navy)">Retail</span><span style="color:var(--fbr-teal);font-size:18px">→</span></a>
+      <a class="waf-card" href="/settori/finance-insurance/" style="padding:22px 24px;display:flex;align-items:center;justify-content:space-between;gap:12px"><span style="font-family:var(--font-text);font-weight:600;font-size:16px;color:var(--fbr-navy)">Finance &amp; Insurance</span><span style="color:var(--fbr-teal);font-size:18px">→</span></a>
+      <a class="waf-card" href="/settori/mobility/" style="padding:22px 24px;display:flex;align-items:center;justify-content:space-between;gap:12px"><span style="font-family:var(--font-text);font-weight:600;font-size:16px;color:var(--fbr-navy)">Mobility</span><span style="color:var(--fbr-teal);font-size:18px">→</span></a>
+      <a class="waf-card" href="/settori/travel/" style="padding:22px 24px;display:flex;align-items:center;justify-content:space-between;gap:12px"><span style="font-family:var(--font-text);font-weight:600;font-size:16px;color:var(--fbr-navy)">Travel</span><span style="color:var(--fbr-teal);font-size:18px">→</span></a>
+      <a class="waf-card" href="/settori/b2b-services/" style="padding:22px 24px;display:flex;align-items:center;justify-content:space-between;gap:12px"><span style="font-family:var(--font-text);font-weight:600;font-size:16px;color:var(--fbr-navy)">B2B Services</span><span style="color:var(--fbr-teal);font-size:18px">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PROVA AGGREGATA ===================== -->
+<section class="waf-sec" style="background:var(--fbr-teal-15);padding-bottom:84px">
+  <div class="waf-wrap">
+    <div style="display:inline-flex;align-items:center;gap:8px;background:var(--fbr-pink);color:#fff;font-family:var(--font-title);font-weight:700;font-size:12px;letter-spacing:0.08em;padding:10px 18px;border-radius:30px;margin-bottom:28px;box-shadow:0 8px 20px rgba(229,67,96,0.28)">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+      CASE STUDY
+    </div>
+    <h2 class="waf-h2" style="margin:0 0 48px;max-width:760px">Risultati <span style="color:var(--fbr-pink)">reali</span></h2>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px">
+      <a class="waf-card" href="/servizi/customer-service/ticket-management/" style="padding:32px;background:#fff">
+        <div style="font-family:var(--font-display);font-weight:700;font-size:20px;color:var(--fbr-navy);margin-bottom:4px">Brico Bravo</div>
+        <div style="font-family:var(--font-title);font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--fbr-navy-50);margin-bottom:20px">E-commerce</div>
+        <div style="font-family:var(--font-title);font-weight:300;font-size:46px;line-height:1;color:var(--fbr-pink)">97%</div>
+        <div style="font-size:13px;color:var(--text-muted);margin:6px 0 18px">Customer Satisfaction · 4 canali, 4 lingue</div>
+        <div style="font-family:var(--font-title);font-weight:700;font-size:13px;color:var(--fbr-teal)">Ticket Management →</div>
+      </a>
+      <a class="waf-card" href="/servizi/customer-service/help-desk/" style="padding:32px;background:#fff">
+        <div style="font-family:var(--font-display);font-weight:700;font-size:20px;color:var(--fbr-navy);margin-bottom:4px">Grand Vision</div>
+        <div style="font-family:var(--font-title);font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--fbr-navy-50);margin-bottom:20px">Retail</div>
+        <div style="font-family:var(--font-title);font-weight:300;font-size:46px;line-height:1;color:var(--fbr-teal)">Omni</div>
+        <div style="font-size:13px;color:var(--text-muted);margin:6px 0 18px">Customer care omnicanale per il retail ottico</div>
+        <div style="font-family:var(--font-title);font-weight:700;font-size:13px;color:var(--fbr-teal)">Help Desk →</div>
+      </a>
+      <a class="waf-card" href="/servizi/customer-service/booking-office/" style="padding:32px;background:#fff">
+        <div style="font-family:var(--font-display);font-weight:700;font-size:20px;color:var(--fbr-navy);margin-bottom:4px">Trivago</div>
+        <div style="font-family:var(--font-title);font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--fbr-navy-50);margin-bottom:20px">Travel</div>
+        <div style="font-family:var(--font-title);font-weight:300;font-size:46px;line-height:1;color:var(--fbr-teal)">Multi</div>
+        <div style="font-size:13px;color:var(--text-muted);margin:6px 0 18px">Supporto multilingua per il travel, su più mercati</div>
+        <div style="font-family:var(--font-title);font-weight:700;font-size:13px;color:var(--fbr-teal)">Booking Office →</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TRY & BUY ===================== -->
+<section class="waf-sec" style="padding-top:88px">
+  <div class="waf-wrap" style="background:linear-gradient(135deg,var(--fbr-teal-15) 0%,#ffffff 46%,var(--fbr-pink-15) 100%);border:1px solid var(--fbr-line);border-radius:28px;padding:76px 56px;text-align:center">
+    <div style="display:inline-flex;align-items:center;gap:9px;font-family:var(--font-title);font-weight:700;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--fbr-pink);margin-bottom:18px"><span style="width:7px;height:7px;border-radius:50%;background:var(--fbr-teal)"></span>Try &amp; Buy</div>
+    <h2 class="waf-h2" style="margin:0 0 16px">Inizia con un pilota.<br>Scala con <span class="waf-hl">fiducia</span>.</h2>
+    <p class="waf-lead" style="max-width:580px;margin:0 auto 32px">Con la formula Try &amp; Buy testi il servizio fino a 3 mesi prima di sceglierci come partner. Analizziamo i tuoi flussi, definiamo insieme il perimetro e attiviamo un team dedicato a rischio contenuto.</p>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+      <a class="waf-btn waf-btn--navy" href="/contatti/">Parliamo del tuo progetto →</a>
+      <a class="waf-btn waf-btn--ghost" href="/contatti/">Scarica la company profile</a>
+    </div>
+  </div>
+</section>
+
+<footer style="background:linear-gradient(180deg,#00386f,var(--fbr-navy));padding:0 24px 36px;border-radius:32px 32px 0 0;font-family:var(--font-text)">
+  <div style="max-width:1240px;margin:0 auto">
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:32px;padding:44px 0;border-bottom:1px solid rgba(255,255,255,0.14);flex-wrap:wrap">
+      <div>
+        <div style="font-family:var(--font-title);font-weight:700;font-size:16px;color:#fff;margin-bottom:6px">Iscriviti alla newsletter</div>
+        <div style="font-size:14px;color:rgba(255,255,255,0.62)">Aggiornamenti BPO, casi studio e risorse per i decision maker.</div>
+      </div>
+      <div style="display:flex;flex:none">
+        <input type="email" placeholder="La tua email" style="font-family:var(--font-text);font-size:14px;padding:13px 18px;border:1px solid rgba(255,255,255,0.2);border-right:none;border-radius:12px 0 0 12px;background:rgba(255,255,255,0.08);color:#fff;outline:none;width:270px">
+        <button style="font-family:var(--font-text);font-weight:700;font-size:13.5px;color:var(--fbr-navy);background:var(--fbr-teal);padding:13px 22px;border:none;border-radius:0 12px 12px 0;cursor:pointer;white-space:nowrap">Iscriviti →</button>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr 1fr;gap:36px;padding:48px 0;border-bottom:1px solid rgba(255,255,255,0.14)">
+      <div>
+        <a href="/"><img src="/assets/logos/WAF_vert_trasp_payoff.png" alt="We Are Fiber" style="height:160px;width:auto;margin-bottom:40px;display:block"></a>
+        <div style="display:flex;gap:10px">
+          <a href="#" style="display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:9px;background:rgba(255,255,255,0.1);color:#fff"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+          <a href="#" style="display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:9px;background:rgba(255,255,255,0.1);color:#fff"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+          <a href="#" style="display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:9px;background:rgba(255,255,255,0.1);color:#fff"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+          <a href="#" aria-label="TikTok" style="display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:9px;background:rgba(255,255,255,0.1);color:#fff"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12.53.02C13.84 0 15.14.01 16.44 0c.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"></path></svg></a>
+        </div>
+      </div>
+      <div>
+        <div style="font-family:var(--font-title);font-weight:700;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--fbr-teal);margin-bottom:16px">Servizi</div>
+        <div style="display:flex;flex-direction:column;gap:11px">
+          <a class="waf-link" href="/servizi/customer-service/" style="font-size:14px;color:rgba(255,255,255,0.72)">Customer Service</a>
+          <a class="waf-link" href="/servizi/back-office/" style="font-size:14px;color:rgba(255,255,255,0.72)">Back Office</a>
+          <a class="waf-link" href="/servizi/process-management/" style="font-size:14px;color:rgba(255,255,255,0.72)">Process Management</a>
+          <a class="waf-link" href="/servizi/outbound-marketing/" style="font-size:14px;color:rgba(255,255,255,0.72)">Outbound Marketing</a>
+        </div>
+      </div>
+      <div>
+        <div style="font-family:var(--font-title);font-weight:700;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--fbr-teal);margin-bottom:16px">Settori</div>
+        <div style="display:flex;flex-direction:column;gap:11px">
+          <a class="waf-link" href="/settori/healthcare/" style="font-size:14px;color:rgba(255,255,255,0.72)">Healthcare</a>
+          <a class="waf-link" href="/settori/ecommerce/" style="font-size:14px;color:rgba(255,255,255,0.72)">E-commerce</a>
+          <a class="waf-link" href="/settori/food-delivery/" style="font-size:14px;color:rgba(255,255,255,0.72)">Food Delivery</a>
+          <a class="waf-link" href="/settori/retail/" style="font-size:14px;color:rgba(255,255,255,0.72)">Retail</a>
+          <a class="waf-link" href="/settori/finance-insurance/" style="font-size:14px;color:rgba(255,255,255,0.72)">Finance &amp; Insurance</a>
+          <a class="waf-link" href="/settori/mobility/" style="font-size:14px;color:rgba(255,255,255,0.72)">Mobility</a>
+          <a class="waf-link" href="/settori/travel/" style="font-size:14px;color:rgba(255,255,255,0.72)">Travel</a>
+          <a class="waf-link" href="/settori/b2b-services/" style="font-size:14px;color:rgba(255,255,255,0.72)">B2B Services</a>
+        </div>
+      </div>
+      <div>
+        <div style="font-family:var(--font-title);font-weight:700;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--fbr-teal);margin-bottom:16px">Azienda</div>
+        <div style="display:flex;flex-direction:column;gap:11px">
+          <a class="waf-link" href="/azienda/chi-siamo/" style="font-size:14px;color:rgba(255,255,255,0.72)">Chi siamo</a>
+          <a class="waf-link" href="/metodo/" style="font-size:14px;color:rgba(255,255,255,0.72)">Metodo</a>
+          <a class="waf-link" href="/azienda/governance/" style="font-size:14px;color:rgba(255,255,255,0.72)">Governance</a>
+          <a class="waf-link" href="/azienda/certificazioni/" style="font-size:14px;color:rgba(255,255,255,0.72)">Certificazioni</a>
+          <a class="waf-link" href="/careers/" style="font-size:14px;color:rgba(255,255,255,0.72)">Careers</a>
+          <a class="waf-link" href="/contatti/" style="font-size:14px;color:rgba(255,255,255,0.72)">Contatti</a>
+        </div>
+      </div>
+      <div>
+        <div style="font-family:var(--font-title);font-weight:700;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--fbr-teal);margin-bottom:16px">Blog</div>
+        <div style="display:flex;flex-direction:column;gap:11px">
+          <a class="waf-link" href="/blog/" style="font-size:14px;color:rgba(255,255,255,0.72)">Tutti gli articoli</a>
+          <a class="waf-link" href="/blog/customer-experience/" style="font-size:14px;color:rgba(255,255,255,0.72)">Customer Experience</a>
+          <a class="waf-link" href="/blog/bpo-operations/" style="font-size:14px;color:rgba(255,255,255,0.72)">BPO &amp; Operations</a>
+          <a class="waf-link" href="/blog/social-responsibility/" style="font-size:14px;color:rgba(255,255,255,0.72)">Social Responsibility</a>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;justify-content:space-between;padding-top:22px;flex-wrap:wrap;gap:12px">
+      <span style="font-size:13px;color:rgba(255,255,255,0.45)">© 2026 Fiber Group Sh.p.k. | We Are Fiber — Outsource. Human force.</span>
+      <span style="font-size:13px;color:rgba(255,255,255,0.45)"><a class="waf-link" href="#" style="color:rgba(255,255,255,0.45)">Privacy</a> · <a class="waf-link" href="#" style="color:rgba(255,255,255,0.45)">Cookie</a> · <a class="waf-link" href="/azienda/governance/whistleblowing/" style="color:rgba(255,255,255,0.45)">Whistleblowing</a></span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

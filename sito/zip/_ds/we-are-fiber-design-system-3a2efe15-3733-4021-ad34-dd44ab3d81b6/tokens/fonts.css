@@ -1,0 +1,27 @@
+/* ============================================================
+   WE ARE FIBER — Fonts
+   Three roles from the brand manual:
+   · Display  → "UniType Fiber" (custom, NOT supplied) — substituted with Inter
+   · Title    → Fabrikat Mono (HVD Fonts) — supplied TTFs, self-hosted below
+   · Text     → Raleway (Google Fonts)
+   ============================================================ */
+
+/* Text + display webfonts (Google) */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,200;0,300;0,400;0,500;0,700;0,800;0,900;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+/* ---- Fabrikat Mono (self-hosted, supplied) ---- */
+@font-face { font-family:'Fabrikat Mono'; font-weight:100; font-style:normal; font-display:swap; src:url('../assets/fonts/FabrikatMono-Hairline.ttf') format('truetype'); }
+@font-face { font-family:'Fabrikat Mono'; font-weight:100; font-style:italic;  font-display:swap; src:url('../assets/fonts/FabrikatMono-HairlineItalic.ttf') format('truetype'); }
+@font-face { font-family:'Fabrikat Mono'; font-weight:200; font-style:normal; font-display:swap; src:url('../assets/fonts/FabrikatMono-Thin.ttf') format('truetype'); }
+@font-face { font-family:'Fabrikat Mono'; font-weight:200; font-style:italic;  font-display:swap; src:url('../assets/fonts/FabrikatMono-ThinItalic.ttf') format('truetype'); }
+@font-face { font-family:'Fabrikat Mono'; font-weight:300; font-style:normal; font-display:swap; src:url('../assets/fonts/FabrikatMono-Light.ttf') format('truetype'); }
+@font-face { font-family:'Fabrikat Mono'; font-weight:300; font-style:italic;  font-display:swap; src:url('../assets/fonts/FabrikatMono-LightItalic.ttf') format('truetype'); }
+@font-face { font-family:'Fabrikat Mono'; font-weight:400; font-style:normal; font-display:swap; src:url('../assets/fonts/FabrikatMono-Regular.ttf') format('truetype'); }
+@font-face { font-family:'Fabrikat Mono'; font-weight:400; font-style:italic;  font-display:swap; src:url('../assets/fonts/FabrikatMono-Italic.ttf') format('truetype'); }
+@font-face { font-family:'Fabrikat Mono'; font-weight:500; font-style:normal; font-display:swap; src:url('../assets/fonts/FabrikatMono-Medium.ttf') format('truetype'); }
+@font-face { font-family:'Fabrikat Mono'; font-weight:500; font-style:italic;  font-display:swap; src:url('../assets/fonts/FabrikatMono-MediumItalic.ttf') format('truetype'); }
+@font-face { font-family:'Fabrikat Mono'; font-weight:700; font-style:normal; font-display:swap; src:url('../assets/fonts/FabrikatMono-Bold.ttf') format('truetype'); }
+@font-face { font-family:'Fabrikat Mono'; font-weight:700; font-style:italic;  font-display:swap; src:url('../assets/fonts/FabrikatMono-BoldItalic.ttf') format('truetype'); }
+@font-face { font-family:'Fabrikat Mono'; font-weight:900; font-style:normal; font-display:swap; src:url('../assets/fonts/FabrikatMono-Black.ttf') format('truetype'); }
+@font-face { font-family:'Fabrikat Mono'; font-weight:900; font-style:italic;  font-display:swap; src:url('../assets/fonts/FabrikatMono-BlackItalic.ttf') format('truetype'); }

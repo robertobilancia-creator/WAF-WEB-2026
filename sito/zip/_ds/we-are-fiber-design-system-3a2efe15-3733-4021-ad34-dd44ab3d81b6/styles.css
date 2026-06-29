@@ -1,0 +1,10 @@
+/* ============================================================
+   FIBER DESIGN SYSTEM — global entry point
+   Consumers link THIS file only. Imports below reach every
+   token + @font-face shipped with the system.
+   Built from the Fiber Brand Manual (Solid Studio, REV04, 2017).
+   ============================================================ */
+@import url('./tokens/fonts.css');
+@import url('./tokens/colors.css');
+@import url('./tokens/typography.css');
+@import url('./tokens/spacing.css');

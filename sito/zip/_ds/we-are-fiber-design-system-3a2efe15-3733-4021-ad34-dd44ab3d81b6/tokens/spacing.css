@@ -1,0 +1,50 @@
+/* ============================================================
+   FIBER — Spacing, radius, shadow, motion
+   The mark is built on a geometric unit "x"; the system keeps an
+   8px base grid, near-square corners, and restrained shadows.
+   ============================================================ */
+:root {
+  /* ---- Spacing (8px base) ---- */
+  --space-0:  0;
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  24px;
+  --space-6:  32px;
+  --space-7:  48px;
+  --space-8:  64px;
+  --space-9:  96px;
+  --space-10: 128px;
+
+  /* ---- Layout ---- */
+  --container-max: 1200px;  /* @kind spacing */
+  --gutter:        24px;    /* @kind spacing */
+  --section-y:     96px;    /* @kind spacing */
+
+  /* ---- Radius (geometric brand → minimal rounding) ---- */
+  --radius-none: 0;
+  --radius-xs:   2px;
+  --radius-sm:   4px;
+  --radius-md:   8px;
+  --radius-pill: 999px;
+  --radius-default: var(--radius-sm);
+
+  /* ---- Borders ---- */
+  --border-width:    1px;  /* @kind spacing */
+  --border-width-lg: 2px;  /* @kind spacing */
+
+  /* ---- Shadows (soft, navy-tinted, never grey) ---- */
+  --shadow-none: none;
+  --shadow-sm:  0 1px 2px rgba(0,46,93,.08);
+  --shadow-md:  0 6px 18px rgba(0,46,93,.10);
+  --shadow-lg:  0 18px 48px rgba(0,46,93,.14);
+  --shadow-accent: 0 10px 30px rgba(229,67,96,.28);  /* pink CTA glow */
+
+  /* ---- Motion ---- */
+  --ease-standard: cubic-bezier(.2,.7,.3,1); /* @kind other */
+  --ease-out:      cubic-bezier(.16,1,.3,1); /* @kind other */
+  --dur-fast:   120ms; /* @kind other */
+  --dur-base:   200ms; /* @kind other */
+  --dur-slow:   360ms; /* @kind other */
+}
