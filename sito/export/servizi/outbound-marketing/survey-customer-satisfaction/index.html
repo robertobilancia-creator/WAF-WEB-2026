@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Survey Customer Satisfaction in Outsourcing — We Are Fiber</title>
+<meta name="description" content="Survey di customer satisfaction in outsourcing: rilevazione multicanale e multilingua di CSAT e NPS, con report e raccomandazioni su cui agire.">
+<link rel="stylesheet" href="/fiber-tokens.css">
+<script>if(!matchMedia('(prefers-reduced-motion: reduce)').matches){document.documentElement.classList.add('js-reveal')}</script>
+<script src="/reveal.js" defer></script>
+</head>
+<body>
+<style>
+.waf-hd-wrap{position:sticky;top:16px;z-index:300;padding:0 24px}
+.waf-hd{position:relative;max-width:1240px;margin:16px auto 0;display:flex;align-items:center;justify-content:space-between;height:86px;padding:0 16px 0 26px;background:rgba(255,255,255,0.82);backdrop-filter:blur(14px);border:1px solid var(--fbr-line);border-radius:18px;box-shadow:0 10px 34px rgba(0,46,93,0.08);font-family:var(--font-text)}
+.waf-hd a{text-decoration:none;color:var(--fbr-navy)}
+.waf-logo img{height:45px;display:block;width:auto}
+.waf-nav{display:flex;align-items:center;gap:2px;height:86px;list-style:none;margin:0;padding:0}
+.waf-nav>li{position:relative;list-style:none;height:100%;display:flex;align-items:center}
+.waf-nav>li>a{display:flex;align-items:center;gap:5px;height:100%;font-weight:600;font-size:14.5px;padding:0 13px;color:var(--fbr-navy)}
+.waf-nav>li>a .ca{font-size:9px;color:var(--fbr-teal);transition:transform .2s}
+.waf-nav>li:hover>a{color:var(--fbr-teal)}
+.waf-nav>li:hover>a .ca{transform:rotate(180deg)}
+.waf-dd{position:absolute;top:calc(100% + 8px);left:0;background:#fff;border:1px solid var(--fbr-line);border-radius:18px;box-shadow:0 28px 70px rgba(0,46,93,0.18);padding:22px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .16s,transform .16s,visibility .16s;pointer-events:none}
+.waf-nav>li:hover .waf-dd{opacity:1;visibility:visible;transform:none;pointer-events:auto}
+/* il mega-menu si allinea alla barra (pill), non alla voce "Servizi" */
+.waf-nav>li:has(.waf-dd.mega){position:static}
+.waf-dd.mega{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;left:0;right:0;width:auto;transform:translateY(-6px)}
+.waf-nav>li:hover .waf-dd.mega{transform:none}
+.waf-ct{font-family:var(--font-title);font-weight:700;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--fbr-teal);padding-bottom:10px;margin-bottom:12px;border-bottom:1px solid var(--fbr-line);display:block}
+.waf-ct:hover{color:var(--fbr-navy)}
+.waf-dd .it{display:block;font-size:14px;color:var(--text-body);padding:6px 0;line-height:1.25}
+.waf-dd .it:hover{color:var(--fbr-pink)}
+.waf-dd.single{min-width:230px}
+.waf-dd.single .it{padding:8px 10px;border-radius:8px}
+.waf-dd.single .it:hover{background:var(--fbr-paper)}
+.waf-hd-r{display:flex;align-items:center;gap:18px}
+.waf-lang{font-family:var(--font-title);font-weight:500;font-size:12.5px;color:var(--fbr-navy-50)}.waf-lang b{color:var(--fbr-navy)}
+.waf-cta{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-text);font-weight:700;font-size:13.5px;color:#fff !important;background:var(--fbr-navy);padding:12px 20px;border-radius:12px;box-shadow:0 6px 18px rgba(0,46,93,0.18);transition:background .2s,transform .2s}
+.waf-cta:hover{background:var(--fbr-black);transform:translateY(-1px)}
+@media(max-width:1024px){.waf-nav,.waf-lang{display:none}}
+</style>
+<div class="waf-hd-wrap"><header class="waf-hd">
+  <a class="waf-logo" href="/"><img src="/assets/logos/WAF_orizz_color.png" alt="We Are Fiber"></a>
+  <ul class="waf-nav">
+    <li><a href="/servizi/">Servizi <span class="ca">▾</span></a>
+      <div class="waf-dd mega">
+        <div>
+          <a class="waf-ct" href="/servizi/customer-service/">Customer Service</a>
+          <a class="it" href="/servizi/customer-service/ticket-management/">Ticket Management</a>
+          <a class="it" href="/servizi/customer-service/digital-customer-care/">Digital Customer Care</a>
+          <a class="it" href="/servizi/customer-service/help-desk/">Help Desk</a>
+          <a class="it" href="/servizi/customer-service/chatbot/">Chatbot</a>
+          <a class="it" href="/servizi/customer-service/booking-office/">Booking Office</a>
+          <a class="it" href="/servizi/customer-service/smart-assistance/">Smart Assistance</a>
+        </div>
+        <div>
+          <a class="waf-ct" href="/servizi/back-office/">Back Office</a>
+          <a class="it" href="/servizi/back-office/data-entry/">Data Entry</a>
+          <a class="it" href="/servizi/back-office/data-enrichment/">Data Enrichment</a>
+          <a class="it" href="/servizi/back-office/gestione-documentale/">Gestione Documentale</a>
+          <a class="it" href="/servizi/back-office/gestione-logistica/">Gestione Logistica</a>
+          <a class="it" href="/servizi/back-office/gestione-ordini/">Gestione Ordini</a>
+        </div>
+        <div>
+          <a class="waf-ct" href="/servizi/process-management/">Process Management</a>
+          <a class="it" href="/servizi/process-management/control-room/">Control Room</a>
+          <a class="it" href="/servizi/process-management/quality-audit/">Quality Audit</a>
+          <a class="it" href="/servizi/process-management/robotic-process-automation/">Robotic Process Automation</a>
+        </div>
+        <div>
+          <a class="waf-ct" href="/servizi/outbound-marketing/">Outbound Marketing</a>
+          <a class="it" href="/servizi/outbound-marketing/survey-customer-satisfaction/">Survey Customer Satisfaction</a>
+          <a class="it" href="/servizi/outbound-marketing/indagini-di-mercato/">Indagini di Mercato</a>
+          <a class="it" href="/servizi/outbound-marketing/campagne-loyalty/">Campagne Loyalty</a>
+        </div>
+      </div>
+    </li>
+    <li><a href="/settori/">Settori <span class="ca">▾</span></a>
+      <div class="waf-dd single">
+        <a class="it" href="/settori/healthcare/">Healthcare</a>
+        <a class="it" href="/settori/ecommerce/">E-commerce</a>
+        <a class="it" href="/settori/food-delivery/">Food Delivery</a>
+        <a class="it" href="/settori/retail/">Retail</a>
+        <a class="it" href="/settori/finance-insurance/">Finance &amp; Insurance</a>
+        <a class="it" href="/settori/mobility/">Mobility</a>
+        <a class="it" href="/settori/travel/">Travel</a>
+        <a class="it" href="/settori/b2b-services/">B2B Services</a>
+      </div>
+    </li>
+    <li><a href="/metodo/">Metodo</a></li>
+    <li><a href="/azienda/chi-siamo/">Azienda <span class="ca">▾</span></a>
+      <div class="waf-dd single">
+        <a class="it" href="/azienda/chi-siamo/">Chi siamo</a>
+        <a class="it" href="/azienda/governance/">Governance</a>
+        <a class="it" href="/azienda/certificazioni/">Certificazioni</a>
+      </div>
+    </li>
+    <li><a href="/blog/">Blog <span class="ca">▾</span></a>
+      <div class="waf-dd single">
+        <a class="it" href="/blog/">Tutti gli articoli</a>
+        <a class="it" href="/blog/customer-experience/">Customer Experience</a>
+        <a class="it" href="/blog/bpo-operations/">BPO &amp; Operations</a>
+        <a class="it" href="/blog/social-responsibility/">Social Responsibility</a>
+      </div>
+    </li>
+    <li><a href="/careers/">Careers</a></li>
+  </ul>
+  <div class="waf-hd-r">
+    <span class="waf-lang"><b>IT</b> / EN</span>
+    <a class="waf-cta" href="/contatti/">Prenota una call</a>
+  </div>
+</header></div>
+
+<div style="background:#fff; font-family:var(--font-text); color:var(--fbr-navy);">
+
+  <!-- ===================== HERO ===================== -->
+  <section style="padding:72px 24px 96px;">
+    <div style="max-width:1180px; margin:0 auto;">
+      <div style="display:flex; align-items:center; gap:8px; font-family:var(--font-title); font-size:12px; letter-spacing:0.06em; color:var(--fbr-navy-50); margin-bottom:36px;">
+        <a class="waf-link" href="/" style="text-decoration:none; color:var(--fbr-navy-50);">Home</a>
+        <span>›</span><a class="waf-link" href="/servizi/" style="text-decoration:none; color:var(--fbr-navy-50);">Servizi</a>
+        <span>›</span><a class="waf-link" href="/servizi/outbound-marketing/" style="text-decoration:none; color:var(--fbr-navy-50);">Outbound Marketing</a>
+        <span>›</span><span style="color:var(--fbr-navy);">Survey Customer Satisfaction</span>
+      </div>
+      <div style="display:grid; grid-template-columns:1.1fr 0.9fr; gap:64px; align-items:center;">
+        <div>
+          <div style="display:inline-flex; align-items:center; gap:9px; font-family:var(--font-title); font-weight:700; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:var(--fbr-teal); margin-bottom:22px;"><span style="width:7px; height:7px; border-radius:50%; background:var(--fbr-pink);"></span>Outbound Marketing</div>
+          <h1 style="font-family:var(--font-display); font-weight:700; font-size:52px; line-height:1.04; letter-spacing:-0.025em; color:var(--fbr-navy); margin:0 0 22px;">Survey Customer Satisfaction<br>in <span style="color:var(--fbr-teal);">Outsourcing</span></h1>
+          <p style="font-family:var(--font-text); font-weight:400; font-size:19px; line-height:1.65; color:var(--text-body); margin:0 0 28px; max-width:520px;">Misura la soddisfazione dei tuoi clienti e trasforma il <strong style="color:var(--fbr-navy); font-weight:700;">feedback in azioni</strong>.</p>
+          <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:34px;">
+            <span style="font-family:var(--font-text); font-weight:500; font-size:13px; color:var(--fbr-navy); background:var(--fbr-paper); border:1px solid var(--fbr-line); border-radius:40px; padding:7px 15px;">CSAT</span>
+            <span style="font-family:var(--font-text); font-weight:500; font-size:13px; color:var(--fbr-navy); background:var(--fbr-paper); border:1px solid var(--fbr-line); border-radius:40px; padding:7px 15px;">NPS</span>
+            <span style="font-family:var(--font-text); font-weight:500; font-size:13px; color:var(--fbr-navy); background:var(--fbr-paper); border:1px solid var(--fbr-line); border-radius:40px; padding:7px 15px;">Multicanale</span>
+            <span style="font-family:var(--font-text); font-weight:500; font-size:13px; color:var(--fbr-navy); background:var(--fbr-paper); border:1px solid var(--fbr-line); border-radius:40px; padding:7px 15px;">Multilingua</span>
+          </div>
+          <div style="display:flex; align-items:center; gap:14px; flex-wrap:wrap;">
+            <a class="waf-btn waf-btn--navy" href="/contatti/">Parliamo del tuo progetto →</a>
+            <a class="waf-btn waf-btn--ghost" href="/contatti/">Prenota una call</a>
+          </div>
+        </div>
+        <div style="position:relative;">
+          <div style="position:relative; border-radius:24px; overflow:hidden; box-shadow:0 22px 60px rgba(0,46,93,0.18);">
+            <img src="/assets/imagery/imagery-people-team.png" alt="Survey Customer Satisfaction We Are Fiber" style="width:100%; height:470px; object-fit:cover; display:block;">
+            <div style="position:absolute; inset:0; background:linear-gradient(150deg, rgba(30,206,202,0.05), rgba(0,46,93,0.14));"></div>
+          </div>
+          <div style="position:absolute; top:28px; right:-22px; display:flex; align-items:center; gap:14px; background:#fff; border:1px solid var(--fbr-line); border-radius:16px; padding:15px 20px; box-shadow:0 16px 38px rgba(0,46,93,0.14);">
+            <div style="width:42px; height:42px; border-radius:11px; background:var(--fbr-teal-15); display:flex; align-items:center; justify-content:center; color:var(--fbr-navy); flex:none;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></div>
+            <div><div style="font-family:var(--font-title); font-weight:300; font-size:26px; line-height:1; color:var(--fbr-navy);">CSAT</div><div style="font-family:var(--font-text); font-size:12.5px; color:var(--text-muted); margin-top:3px;">e NPS misurati</div></div>
+          </div>
+          <div style="position:absolute; bottom:28px; left:-24px; display:flex; align-items:center; gap:14px; background:#fff; border:1px solid var(--fbr-line); border-radius:16px; padding:15px 20px; box-shadow:0 16px 38px rgba(0,46,93,0.14);">
+            <div style="width:42px; height:42px; border-radius:11px; background:var(--fbr-teal-15); display:flex; align-items:center; justify-content:center; color:var(--fbr-navy); flex:none;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg></div>
+            <div><div style="font-family:var(--font-title); font-weight:300; font-size:26px; line-height:1; color:var(--fbr-navy);">Multilingua</div><div style="font-family:var(--font-text); font-size:12.5px; color:var(--text-muted); margin-top:3px;">su più canali</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== IL SERVIZIO ===================== -->
+  <section style="background:var(--fbr-paper); padding:116px 24px;">
+    <div style="max-width:1180px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center;">
+      <div>
+        <div style="display:inline-flex; align-items:center; gap:9px; font-family:var(--font-title); font-weight:700; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:var(--fbr-teal); margin-bottom:18px;"><span style="width:7px; height:7px; border-radius:50%; background:var(--fbr-pink);"></span>Il servizio</div>
+        <h2 style="font-family:var(--font-display); font-weight:700; font-size:40px; line-height:1.08; letter-spacing:-0.02em; color:var(--fbr-navy); margin:0 0 24px;">Ascolta i clienti, <span style="color:var(--fbr-teal);">prima che parlino gli altri</span></h2>
+        <p style="font-family:var(--font-text); font-size:17px; line-height:1.7; color:var(--text-body); margin:0;">Le survey di customer satisfaction raccolgono in modo strutturato la voce dei tuoi clienti — dopo un acquisto, un'assistenza o un'interazione. Un team dedicato e multilingua gestisce la rilevazione su più canali (telefono, email, chat), restituendoti dati chiari su cui agire.</p>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:16px;">
+        <div style="background:#fff; border:1px solid var(--fbr-line); border-radius:16px; padding:18px 22px; display:flex; align-items:center; gap:16px;"><div style="width:10px; height:10px; border-radius:50%; background:var(--fbr-teal); flex:none;"></div><span style="font-family:var(--font-text); font-weight:500; font-size:16px; color:var(--fbr-navy);">CSAT</span></div>
+        <div style="background:#fff; border:1px solid var(--fbr-line); border-radius:16px; padding:18px 22px; display:flex; align-items:center; gap:16px;"><div style="width:10px; height:10px; border-radius:50%; background:var(--fbr-teal); flex:none;"></div><span style="font-family:var(--font-text); font-weight:500; font-size:16px; color:var(--fbr-navy);">NPS</span></div>
+        <div style="background:#fff; border:1px solid var(--fbr-line); border-radius:16px; padding:18px 22px; display:flex; align-items:center; gap:16px;"><div style="width:10px; height:10px; border-radius:50%; background:var(--fbr-teal); flex:none;"></div><span style="font-family:var(--font-text); font-weight:500; font-size:16px; color:var(--fbr-navy);">Multicanale</span></div>
+        <div style="background:#fff; border:1px solid var(--fbr-line); border-radius:16px; padding:18px 22px; display:flex; align-items:center; gap:16px;"><div style="width:10px; height:10px; border-radius:50%; background:var(--fbr-teal); flex:none;"></div><span style="font-family:var(--font-text); font-weight:500; font-size:16px; color:var(--fbr-navy);">Multilingua</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== BENEFICI ===================== -->
+  <section style="padding:116px 24px;">
+    <div style="max-width:1180px; margin:0 auto;">
+      <div style="max-width:640px; margin-bottom:52px;">
+        <div style="display:inline-flex; align-items:center; gap:9px; font-family:var(--font-title); font-weight:700; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:var(--fbr-teal); margin-bottom:18px;"><span style="width:7px; height:7px; border-radius:50%; background:var(--fbr-pink);"></span>Benefici</div>
+        <h2 style="font-family:var(--font-display); font-weight:700; font-size:40px; line-height:1.08; letter-spacing:-0.02em; color:var(--fbr-navy); margin:0;">Cosa cambia <span style="color:var(--fbr-teal);">per il tuo business</span></h2>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:18px;">
+        <div style="background:#fff; border:1px solid var(--fbr-line); border-radius:18px; padding:34px;">
+          <div style="width:44px; height:44px; border-radius:13px; background:var(--fbr-teal-15); display:flex; align-items:center; justify-content:center; color:var(--fbr-navy); margin-bottom:20px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg></div>
+          <h3 style="font-family:var(--font-title); font-weight:700; font-size:19px; color:var(--fbr-navy); margin:0 0 12px;">Decisioni basate sui dati</h3>
+          <p style="font-family:var(--font-text); font-size:15px; line-height:1.65; color:var(--text-body); margin:0;">Capisci con precisione cosa funziona e cosa no.</p>
+        </div>
+        <div style="background:#fff; border:1px solid var(--fbr-line); border-radius:18px; padding:34px;">
+          <div style="width:44px; height:44px; border-radius:13px; background:var(--fbr-teal-15); display:flex; align-items:center; justify-content:center; color:var(--fbr-navy); margin-bottom:20px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></div>
+          <h3 style="font-family:var(--font-title); font-weight:700; font-size:19px; color:var(--fbr-navy); margin:0 0 12px;">Clienti più fedeli</h3>
+          <p style="font-family:var(--font-text); font-size:15px; line-height:1.65; color:var(--text-body); margin:0;">Chi si sente ascoltato tende a restare.</p>
+        </div>
+        <div style="background:#fff; border:1px solid var(--fbr-line); border-radius:18px; padding:34px;">
+          <div style="width:44px; height:44px; border-radius:13px; background:var(--fbr-teal-15); display:flex; align-items:center; justify-content:center; color:var(--fbr-navy); margin-bottom:20px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></div>
+          <h3 style="font-family:var(--font-title); font-weight:700; font-size:19px; color:var(--fbr-navy); margin:0 0 12px;">Segnali di allerta precoci</h3>
+          <p style="font-family:var(--font-text); font-size:15px; line-height:1.65; color:var(--text-body); margin:0;">Intercetti l'insoddisfazione prima che diventi abbandono.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:var(--fbr-paper); padding:116px 24px;">
+    <div style="max-width:760px; margin:0 auto; text-align:center;">
+      <div style="display:inline-flex; align-items:center; gap:9px; font-family:var(--font-title); font-weight:700; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:var(--fbr-teal); margin-bottom:18px;"><span style="width:7px; height:7px; border-radius:50%; background:var(--fbr-pink);"></span>Come funziona</div>
+      <h2 style="font-family:var(--font-display); font-weight:700; font-size:40px; line-height:1.08; letter-spacing:-0.02em; color:var(--fbr-navy); margin:0 0 22px;">Dalla rilevazione <span style="color:var(--fbr-teal);">all'insight</span></h2>
+      <p style="font-family:var(--font-text); font-size:17px; line-height:1.75; color:var(--text-body); margin:0;">Progettiamo il questionario, gestiamo la rilevazione multicanale e multilingua, analizziamo i risultati (CSAT, NPS, CES) e ti restituiamo report e raccomandazioni operative.</p>
+    </div>
+  </section>
+
+  <section style="background:var(--fbr-teal-15); padding:116px 24px;">
+    <div style="max-width:860px; margin:0 auto; text-align:center;">
+      <div style="display:inline-flex; align-items:center; gap:8px; background:var(--fbr-pink); color:#fff; font-family:var(--font-title); font-weight:700; font-size:12px; letter-spacing:0.08em; padding:10px 18px; border-radius:30px; margin-bottom:28px; box-shadow:0 8px 20px rgba(229,67,96,0.28);">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+        CASE STUDY
+      </div>
+      <h2 style="font-family:var(--font-display); font-weight:700; font-size:38px; line-height:1.08; letter-spacing:-0.02em; color:var(--fbr-navy); margin:0 0 18px;">Case study in <span style="color:var(--fbr-pink);">arrivo</span></h2>
+      <p style="font-family:var(--font-text); font-size:17px; line-height:1.7; color:var(--text-body); margin:0 auto 32px; max-width:600px;">Stiamo preparando un case study dedicato alle survey di customer satisfaction. Nel frattempo, parlaci del tuo progetto: ti mostriamo risultati e referenze su attività simili.</p>
+      <a class="waf-btn waf-btn--navy" href="/contatti/">Parliamo del tuo progetto →</a>
+    </div>
+  </section>
+
+  <!-- ===================== SETTORI ===================== -->
+  <section style="padding:116px 24px;">
+    <div style="max-width:1180px; margin:0 auto;">
+      <div style="max-width:680px; margin-bottom:40px;">
+        <div style="display:inline-flex; align-items:center; gap:9px; font-family:var(--font-title); font-weight:700; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:var(--fbr-teal); margin-bottom:18px;"><span style="width:7px; height:7px; border-radius:50%; background:var(--fbr-pink);"></span>Settori</div>
+        <h2 style="font-family:var(--font-display); font-weight:700; font-size:40px; line-height:1.08; letter-spacing:-0.02em; color:var(--fbr-navy); margin:0;">Lo applichiamo nel <span style="color:var(--fbr-teal);">tuo settore</span></h2>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:14px;">
+        <a class="waf-card" href="/settori/healthcare/" style="padding:22px 24px; display:flex; align-items:center; justify-content:space-between; gap:12px;"><span style="font-family:var(--font-text); font-weight:600; font-size:16px; color:var(--fbr-navy);">Healthcare</span><span style="color:var(--fbr-teal); font-size:18px;">→</span></a>
+        <a class="waf-card" href="/settori/ecommerce/" style="padding:22px 24px; display:flex; align-items:center; justify-content:space-between; gap:12px;"><span style="font-family:var(--font-text); font-weight:600; font-size:16px; color:var(--fbr-navy);">E-commerce</span><span style="color:var(--fbr-teal); font-size:18px;">→</span></a>
+        <a class="waf-card" href="/settori/food-delivery/" style="padding:22px 24px; display:flex; align-items:center; justify-content:space-between; gap:12px;"><span style="font-family:var(--font-text); font-weight:600; font-size:16px; color:var(--fbr-navy);">Food Delivery</span><span style="color:var(--fbr-teal); font-size:18px;">→</span></a>
+        <a class="waf-card" href="/settori/retail/" style="padding:22px 24px; display:flex; align-items:center; justify-content:space-between; gap:12px;"><span style="font-family:var(--font-text); font-weight:600; font-size:16px; color:var(--fbr-navy);">Retail</span><span style="color:var(--fbr-teal); font-size:18px;">→</span></a>
+        <a class="waf-card" href="/settori/finance-insurance/" style="padding:22px 24px; display:flex; align-items:center; justify-content:space-between; gap:12px;"><span style="font-family:var(--font-text); font-weight:600; font-size:16px; color:var(--fbr-navy);">Finance &amp; Insurance</span><span style="color:var(--fbr-teal); font-size:18px;">→</span></a>
+        <a class="waf-card" href="/settori/mobility/" style="padding:22px 24px; display:flex; align-items:center; justify-content:space-between; gap:12px;"><span style="font-family:var(--font-text); font-weight:600; font-size:16px; color:var(--fbr-navy);">Mobility</span><span style="color:var(--fbr-teal); font-size:18px;">→</span></a>
+        <a class="waf-card" href="/settori/travel/" style="padding:22px 24px; display:flex; align-items:center; justify-content:space-between; gap:12px;"><span style="font-family:var(--font-text); font-weight:600; font-size:16px; color:var(--fbr-navy);">Travel</span><span style="color:var(--fbr-teal); font-size:18px;">→</span></a>
+        <a class="waf-card" href="/settori/b2b-services/" style="padding:22px 24px; display:flex; align-items:center; justify-content:space-between; gap:12px;"><span style="font-family:var(--font-text); font-weight:600; font-size:16px; color:var(--fbr-navy);">B2B Services</span><span style="color:var(--fbr-teal); font-size:18px;">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== TRY & BUY ===================== -->
+  <section style="padding:116px 24px;">
+    <div style="max-width:1180px; margin:0 auto; background:linear-gradient(135deg, var(--fbr-teal-15) 0%, #ffffff 46%, var(--fbr-pink-15) 100%); border:1px solid var(--fbr-line); border-radius:28px; padding:76px 56px; text-align:center;">
+      <div style="display:inline-flex; align-items:center; gap:9px; font-family:var(--font-title); font-weight:700; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:var(--fbr-pink); margin-bottom:18px;"><span style="width:7px; height:7px; border-radius:50%; background:var(--fbr-teal);"></span>Try &amp; Buy</div>
+      <h2 style="font-family:var(--font-display); font-weight:700; font-size:42px; line-height:1.08; letter-spacing:-0.025em; color:var(--fbr-navy); margin:0 0 16px;">Inizia con un progetto pilota.<br>Scala con <span style="color:var(--fbr-teal);">fiducia</span>.</h2>
+      <p style="font-family:var(--font-text); font-size:17px; line-height:1.6; color:var(--text-body); margin:0 auto 32px; max-width:580px;">Con la formula Try &amp; Buy testi il servizio fino a 3 mesi prima di sceglierci come partner. Analizziamo i tuoi flussi, definiamo insieme il perimetro e attiviamo un team dedicato a rischio contenuto.</p>
+      <div style="display:flex; align-items:center; justify-content:center; gap:14px; flex-wrap:wrap;">
+        <a class="waf-btn waf-btn--navy" href="/contatti/">Parliamo del tuo progetto →</a>
+        <a class="waf-btn waf-btn--ghost" href="/contatti/">Scarica la company profile</a>
+      </div>
+    </div>
+  </section>
+
+</div>
+<footer style="background:linear-gradient(180deg,#00386f,var(--fbr-navy));padding:0 24px 36px;border-radius:32px 32px 0 0;font-family:var(--font-text)">
+  <div style="max-width:1240px;margin:0 auto">
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:32px;padding:44px 0;border-bottom:1px solid rgba(255,255,255,0.14);flex-wrap:wrap">
+      <div>
+        <div style="font-family:var(--font-title);font-weight:700;font-size:16px;color:#fff;margin-bottom:6px">Iscriviti alla newsletter</div>
+        <div style="font-size:14px;color:rgba(255,255,255,0.62)">Aggiornamenti BPO, casi studio e risorse per i decision maker.</div>
+      </div>
+      <div style="display:flex;flex:none">
+        <input type="email" placeholder="La tua email" style="font-family:var(--font-text);font-size:14px;padding:13px 18px;border:1px solid rgba(255,255,255,0.2);border-right:none;border-radius:12px 0 0 12px;background:rgba(255,255,255,0.08);color:#fff;outline:none;width:270px">
+        <button style="font-family:var(--font-text);font-weight:700;font-size:13.5px;color:var(--fbr-navy);background:var(--fbr-teal);padding:13px 22px;border:none;border-radius:0 12px 12px 0;cursor:pointer;white-space:nowrap">Iscriviti →</button>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr 1fr;gap:36px;padding:48px 0;border-bottom:1px solid rgba(255,255,255,0.14)">
+      <div>
+        <a href="/"><img src="/assets/logos/WAF_vert_trasp_payoff.png" alt="We Are Fiber" style="height:160px;width:auto;margin-bottom:40px;display:block"></a>
+        <div style="display:flex;gap:10px">
+          <a href="#" style="display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:9px;background:rgba(255,255,255,0.1);color:#fff"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+          <a href="#" style="display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:9px;background:rgba(255,255,255,0.1);color:#fff"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+          <a href="#" style="display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:9px;background:rgba(255,255,255,0.1);color:#fff"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+          <a href="#" aria-label="TikTok" style="display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:9px;background:rgba(255,255,255,0.1);color:#fff"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12.53.02C13.84 0 15.14.01 16.44 0c.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"></path></svg></a>
+        </div>
+      </div>
+      <div>
+        <div style="font-family:var(--font-title);font-weight:700;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--fbr-teal);margin-bottom:16px">Servizi</div>
+        <div style="display:flex;flex-direction:column;gap:11px">
+          <a class="waf-link" href="/servizi/customer-service/" style="font-size:14px;color:rgba(255,255,255,0.72)">Customer Service</a>
+          <a class="waf-link" href="/servizi/back-office/" style="font-size:14px;color:rgba(255,255,255,0.72)">Back Office</a>
+          <a class="waf-link" href="/servizi/process-management/" style="font-size:14px;color:rgba(255,255,255,0.72)">Process Management</a>
+          <a class="waf-link" href="/servizi/outbound-marketing/" style="font-size:14px;color:rgba(255,255,255,0.72)">Outbound Marketing</a>
+        </div>
+      </div>
+      <div>
+        <div style="font-family:var(--font-title);font-weight:700;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--fbr-teal);margin-bottom:16px">Settori</div>
+        <div style="display:flex;flex-direction:column;gap:11px">
+          <a class="waf-link" href="/settori/healthcare/" style="font-size:14px;color:rgba(255,255,255,0.72)">Healthcare</a>
+          <a class="waf-link" href="/settori/ecommerce/" style="font-size:14px;color:rgba(255,255,255,0.72)">E-commerce</a>
+          <a class="waf-link" href="/settori/food-delivery/" style="font-size:14px;color:rgba(255,255,255,0.72)">Food Delivery</a>
+          <a class="waf-link" href="/settori/retail/" style="font-size:14px;color:rgba(255,255,255,0.72)">Retail</a>
+          <a class="waf-link" href="/settori/finance-insurance/" style="font-size:14px;color:rgba(255,255,255,0.72)">Finance &amp; Insurance</a>
+          <a class="waf-link" href="/settori/mobility/" style="font-size:14px;color:rgba(255,255,255,0.72)">Mobility</a>
+          <a class="waf-link" href="/settori/travel/" style="font-size:14px;color:rgba(255,255,255,0.72)">Travel</a>
+          <a class="waf-link" href="/settori/b2b-services/" style="font-size:14px;color:rgba(255,255,255,0.72)">B2B Services</a>
+        </div>
+      </div>
+      <div>
+        <div style="font-family:var(--font-title);font-weight:700;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--fbr-teal);margin-bottom:16px">Azienda</div>
+        <div style="display:flex;flex-direction:column;gap:11px">
+          <a class="waf-link" href="/azienda/chi-siamo/" style="font-size:14px;color:rgba(255,255,255,0.72)">Chi siamo</a>
+          <a class="waf-link" href="/metodo/" style="font-size:14px;color:rgba(255,255,255,0.72)">Metodo</a>
+          <a class="waf-link" href="/azienda/governance/" style="font-size:14px;color:rgba(255,255,255,0.72)">Governance</a>
+          <a class="waf-link" href="/azienda/certificazioni/" style="font-size:14px;color:rgba(255,255,255,0.72)">Certificazioni</a>
+          <a class="waf-link" href="/careers/" style="font-size:14px;color:rgba(255,255,255,0.72)">Careers</a>
+          <a class="waf-link" href="/contatti/" style="font-size:14px;color:rgba(255,255,255,0.72)">Contatti</a>
+        </div>
+      </div>
+      <div>
+        <div style="font-family:var(--font-title);font-weight:700;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--fbr-teal);margin-bottom:16px">Blog</div>
+        <div style="display:flex;flex-direction:column;gap:11px">
+          <a class="waf-link" href="/blog/" style="font-size:14px;color:rgba(255,255,255,0.72)">Tutti gli articoli</a>
+          <a class="waf-link" href="/blog/customer-experience/" style="font-size:14px;color:rgba(255,255,255,0.72)">Customer Experience</a>
+          <a class="waf-link" href="/blog/bpo-operations/" style="font-size:14px;color:rgba(255,255,255,0.72)">BPO &amp; Operations</a>
+          <a class="waf-link" href="/blog/social-responsibility/" style="font-size:14px;color:rgba(255,255,255,0.72)">Social Responsibility</a>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;justify-content:space-between;padding-top:22px;flex-wrap:wrap;gap:12px">
+      <span style="font-size:13px;color:rgba(255,255,255,0.45)">© 2026 Fiber Group Sh.p.k. | We Are Fiber — Outsource. Human force.</span>
+      <span style="font-size:13px;color:rgba(255,255,255,0.45)"><a class="waf-link" href="#" style="color:rgba(255,255,255,0.45)">Privacy</a> · <a class="waf-link" href="#" style="color:rgba(255,255,255,0.45)">Cookie</a> · <a class="waf-link" href="/azienda/governance/whistleblowing/" style="color:rgba(255,255,255,0.45)">Whistleblowing</a></span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
