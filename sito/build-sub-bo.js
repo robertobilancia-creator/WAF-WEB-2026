@@ -302,7 +302,7 @@ const SUBS = [
         { label: 'Risorse full time', value: '19' },
         { label: 'Ristoranti inseriti / mese', value: '650' },
         { label: 'Menu inseriti / mese', value: '2.000' },
-        { label: 'Menu aggiornati / mese', value: '1.100', accent: true },
+        { label: 'Menu aggiornati / mese', value: '1.156', accent: true },
       ],
     },
   },
